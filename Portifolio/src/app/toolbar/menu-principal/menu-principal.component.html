@@ -1,0 +1,34 @@
+<div class="fundo-toolbar">
+  <mat-toolbar id="tb-menu" class="toolbar">
+    <div>
+        <button id="btn-side-menu" [matMenuTriggerFor]="menu"  mat-icon-button>
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+    <a mat-flat-button id="btnMenu" *ngFor="let button of dadosMenu" routerLinkActive="clicked"  [routerLink]="button.href">{{ button.description }}</a>
+</mat-toolbar>
+
+<mat-menu #menu="matMenu">
+  <button *ngFor="let button of dadosMenu" [routerLink]="button.href" mat-menu-item>
+    <mat-icon>person</mat-icon>
+    <span>{{ button.description }}</span>
+  </button>
+</mat-menu>
+</div>
+
+<div id="breadCrumb">
+  <div class="description-breadCrumb">
+    <a *ngIf="hasRoute('work')"><a matTooltip="Inicio"  routerLink="/inicio">&nbsp;&nbsp; Inicio / </a>Meus Trabalhos</a>
+    <a *ngIf="hasRoute('contact')"><a matTooltip="Inicio" routerLink="/inicio">&nbsp;&nbsp; Inicio / </a>Contato</a>
+    <a *ngIf="hasRoute('detail')"> 
+      <a matTooltip="Inicio" routerLink="/inicio">&nbsp;&nbsp; Inicio /  </a>  
+      <a matTooltip="Meus Trabalhos" routerLink="/work">&nbsp; Meus Trabalhos  / </a>  
+      <a>&nbsp;&nbsp; Detalhamento Trabalho {{ getId() }} </a>  
+     </a>
+  </div>
+</div>
+
+
+
+ 
+  

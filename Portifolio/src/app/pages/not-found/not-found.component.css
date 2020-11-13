@@ -1,0 +1,21 @@
+.notfoundComponent{
+    background-color: #3f51b5;
+    color:white;
+    width: 600px;
+    height: 200px;
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+} 
+
+a {
+    color: white;
+}
+
+
+a:hover{
+    color:gold;
+}
+
+p {
+    margin-top:60px;
+}

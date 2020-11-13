@@ -1,0 +1,23 @@
+.fundo-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #E7E7E7;
+    
+}
+
+.div-paginator{
+    display: flex;
+}
+
+
+@media screen and (max-width:480px){
+
+    .fundo-card {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        background-color: #E7E7E7;
+    }
+    
+}

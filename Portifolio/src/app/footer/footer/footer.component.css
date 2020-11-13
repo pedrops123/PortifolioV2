@@ -1,0 +1,16 @@
+.footer{
+    background-color: black;
+    color:white;
+    text-align: center;
+}
+
+
+
+@media screen and (max-width:187px){
+
+    .footer{
+        background-color: black;
+        color:white;
+        text-align: center;
+    }
+}

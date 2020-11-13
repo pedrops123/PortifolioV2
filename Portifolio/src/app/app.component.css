@@ -1,0 +1,23 @@
+.btn-up {
+    position: fixed !important;
+    right: 2%;
+    top: 78%;
+    background-color: red;
+}
+
+@media screen and (max-width:480px){
+
+    .btn-up {
+        position: fixed !important;
+        right: 2%;
+        top:90%;
+        width: 41px;
+        height: 41px;
+    }
+
+    .mat-icon{
+        margin:-12px 0px 0px 0px;
+    }
+
+
+}

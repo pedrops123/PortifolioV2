@@ -1,0 +1,23 @@
+<form [formGroup]="loginForm" id="form-login" >
+    <div class="title"> <p class="title-content">Manager Adm</p></div>
+       <p id="validationGeral" *ngIf="mensagemValidation.length > 0"> {{ mensagemValidation  | titlecase }} </p> 
+        <mat-form-field id="cmpUsername" class="example-full-width">
+            <mat-label>Username</mat-label>
+            <input matInput type="text"  formControlName="login"  placeholder="Seu Login" required>
+            <mat-error *ngIf="loginForm.controls['login'].hasError('required')">
+              Campo Login Requirido
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input matInput  type="password" formControlName="senha"  placeholder="Sua Senha" required>
+            <mat-error *ngIf="loginForm.controls['senha'].hasError('required')">
+              Campo Password Requirido
+            </mat-error>
+          </mat-form-field><br/><br/>
+          
+          <button (click)="submitUser()" id="sbmButton" mat-button color="primary">Entrar</button>
+  
+    
+        </form>

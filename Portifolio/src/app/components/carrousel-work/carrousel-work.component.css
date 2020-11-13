@@ -1,0 +1,46 @@
+#component_carrousel {
+    background-color:gray;
+    width:727px;
+    height: 560px;
+    position: relative;
+    z-index: 1;
+    border-radius: 60px;
+    margin: 32px 0px 21px 0px;
+}
+
+
+@media screen and (max-width:709px){
+    #component_carrousel{
+        background-color:gray;
+        width: 360px;
+        height: 560px;
+        position: relative;
+        display: flex;
+        z-index: 1;
+    }
+}
+
+
+
+@media screen and (max-width:480px){
+    #component_carrousel{
+        background-color:gray;
+        width: 360px;
+        height: 560px;
+        position: relative;
+        display: flex;
+        z-index: 1;
+    }
+}
+
+
+@media screen and (max-width:280px){
+    #component_carrousel {
+        background-color:gray;
+        width:205px;
+        height: 560px;
+        position: relative;
+        display: flex;
+        z-index: 1;
+    }
+}

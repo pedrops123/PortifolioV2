@@ -1,0 +1,56 @@
+.fundo-toolbar{
+    display: flex;
+}
+
+.toolbar{
+    background-color:black;
+}
+
+#btn-side-menu{
+    display: none;
+}
+
+#breadCrumb {
+    display: flex;
+    background-color: #D1D1D1;
+}
+
+.description-breadCrumb a:link{
+    text-decoration: none;
+    color: darkblue;
+}
+
+.description-breadCrumb a:visited{
+    text-decoration: none;
+    color: darkblue;
+}
+
+#btnMenu {
+    margin:0px 0px 0px 23px;
+    color:white;
+    background-color:black ;
+    transition: 0.8s;
+}
+
+#btnMenu:hover {
+    background-color:gray;
+    transition: 0.8s;
+}
+
+.clicked{
+    color:gold !important;
+}
+
+@media screen and (max-width:480px){
+
+    #btnMenu {
+        display: none;
+    }
+
+    #btn-side-menu {
+        display: block;
+        color:white;
+    }
+    
+    
+}

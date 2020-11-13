@@ -1,0 +1,32 @@
+.card-base
+{
+    width: 285px;
+    margin:26px 0px 26px 98px;
+    transition: 0.9s;
+}
+
+.card-base:hover {
+    width: 293px;
+    transition: 0.9s;
+}
+
+
+
+@media screen and (max-width:480px){
+    .card-base
+    {
+        width: 216px;
+        margin:26px 0px 26px 61px;
+        transition: 0.9s;
+    }
+}
+
+@media screen and (max-width:280px){
+    .card-base
+    {
+        width: 129px;
+        margin:26px 0px 26px 61px;
+        transition: 0.9s;
+    }
+}
+
