@@ -1,3 +1,10 @@
 <div id="component_carrousel">
-
+  <div id="display_foto">
+    <img  [src]="fotoSelecionadaDisplay"/>
+  </div>
+  <div id="thumbs_gallery">
+    <div *ngFor="let fotos of data" [ngClass]="{ 'thumbs_active': fotoThumbSelecionada === fotos.id }" (click)="mostraDisplayFoto(fotos.url , fotos.id)" class="thumbs">
+        <img [src]="fotos.url">
+    </div>
+  </div>
 </div>

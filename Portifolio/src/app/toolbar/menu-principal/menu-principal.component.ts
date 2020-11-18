@@ -29,11 +29,13 @@ export class MenuPrincipalComponent implements OnInit {
     return this.router.url.includes(route);
   }
 
-  getId(){
+  
+  getIdDescription(){
     let id = this.routerActive.snapshot.paramMap.get('idWork');
     console.log(id);
     return id;
   }
+  
 
 
 }

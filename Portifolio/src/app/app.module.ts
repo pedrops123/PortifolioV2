@@ -33,8 +33,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { WorkServiceService } from './services/works/work-service.service';
 import { DetailWorkComponent } from './pages/detail-work/detail-work.component';
 import { CarrouselWorkComponent } from './components/carrousel-work/carrousel-work.component';
-
-
+import { CarrouselWorkModule } from './components/carrousel-work/carrousel-work.module';
 
 @NgModule({
   declarations: [
@@ -48,11 +47,8 @@ import { CarrouselWorkComponent } from './components/carrousel-work/carrousel-wo
     SiteLayoutComponent,
     CardLayoutComponent,
     FooterComponent,
-    DetailWorkComponent,
-    CarrouselWorkComponent,
-    
-    
-   
+    DetailWorkComponent
+  
   ],
   imports: [
     BrowserModule,
@@ -70,7 +66,8 @@ import { CarrouselWorkComponent } from './components/carrousel-work/carrousel-wo
     MatCardModule,
     MatPaginatorModule,
     MatMenuModule,
-    MatTooltipModule
+    MatTooltipModule,
+    CarrouselWorkModule
 
   ],
   providers: [
