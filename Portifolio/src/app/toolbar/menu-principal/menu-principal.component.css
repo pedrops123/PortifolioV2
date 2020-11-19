@@ -1,13 +1,17 @@
-.fundo-toolbar{
+.fundo-toolbar {
     display: flex;
 }
 
-.toolbar{
+.toolbar {
     background-color:black;
 }
 
-#btn-side-menu{
+#btn-side-menu {
     display: none;
+}
+
+div .mat-menu-panel {
+    display: none !important;
 }
 
 #breadCrumb {
@@ -15,12 +19,12 @@
     background-color: #D1D1D1;
 }
 
-.description-breadCrumb a:link{
+.description-breadCrumb a:link {
     text-decoration: none;
     color: darkblue;
 }
 
-.description-breadCrumb a:visited{
+.description-breadCrumb a:visited {
     text-decoration: none;
     color: darkblue;
 }
@@ -37,7 +41,7 @@
     transition: 0.8s;
 }
 
-.clicked{
+.clicked {
     color:gold !important;
 }
 
@@ -51,6 +55,11 @@
         display: block;
         color:white;
     }
+
+
     
+    div .mat-menu-panel  {
+        display: block !important;
+    }
     
 }

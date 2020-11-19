@@ -1,12 +1,8 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication.Certificate;
+using System.IO;
+using System.Reflection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -14,8 +10,6 @@ using Microsoft.Extensions.Hosting;
 
 namespace webApi
 {
-
-   
     public class Startup
     {
          private const string name_cors = "AllowCorsLocal"; 
@@ -26,15 +20,41 @@ namespace webApi
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        
         public void ConfigureServices(IServiceCollection services)
         {
           services.AddCors(options => options.AddPolicy(name_cors,
           builder => {
               builder.AllowAnyHeader();
-              builder.WithOrigins("http://localhost:4200");
+              builder.AllowAnyOrigin();
+              builder.AllowAnyMethod();
+              //builder.WithOrigins("http://localhost:4200");
           }));
-            services.AddControllers();
+
+          // Configuracoes Swagger
+          services.ConfigureSwaggerGen(r=>{
+              r.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Portifolio V2",
+                    Description = "API portifolio V2",
+                    TermsOfService = null ,
+                    Contact = new Microsoft.OpenApi.Models.OpenApiContact() {
+                         Name = "Pedro Vinicius Rodrigues Furlan",
+                         Email = "pedro.furlan1304@hotmail.com",
+                         Url = null 
+                     }
+                });
+
+           // mostra comentarios xml para documentação
+            var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+            var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+            r.IncludeXmlComments(xmlPath);
+          });
+
+          services.AddSwaggerGen();
+    
+          services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +65,13 @@ namespace webApi
                 app.UseDeveloperExceptionPage();
             }
 
+           app.UseSwagger();
+           app.UseSwaggerUI(c =>
+            {
+                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+            });
+
+    
             app.UseCors(name_cors);
 
             app.UseHttpsRedirection();

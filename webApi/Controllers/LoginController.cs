@@ -20,6 +20,9 @@ namespace webApi.Controllers
 
         [HttpPost]
         [Route("Logar")]
+        /// <summary>
+        /// Metodo logar 
+        /// </summary>
         public ValidationLogin ValidaLogin(LoginModel dadosUser){
            ValidationLogin retornoLogin = new ValidationLogin();
            LoginValidator validator = new LoginValidator();

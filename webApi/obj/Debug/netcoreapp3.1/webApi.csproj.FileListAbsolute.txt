@@ -29,3 +29,8 @@ C:\Portifolio_new\webApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protoco
 C:\Portifolio_new\webApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 C:\Portifolio_new\webApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Portifolio_new\webApi\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Portifolio_new\webApi\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Portifolio_new\webApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Portifolio_new\webApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Portifolio_new\webApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Portifolio_new\webApi\obj\Debug\netcoreapp3.1\webApi.MvcApplicationPartsAssemblyInfo.cs

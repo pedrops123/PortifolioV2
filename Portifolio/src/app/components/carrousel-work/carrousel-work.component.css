@@ -38,15 +38,17 @@ img {
 }
 
 #display_foto{
-    width: 647px;
-    height: 284px;
+
     margin: 0px 8px -169px -77px;
 }
 
 #display_foto img {
-    width: 647px;
-    height: 284px;
-    margin: 0px 8px -169px 34px;
+    
+    width: 10em;
+    
+    object-fit: contain;
+    object-position:50% 50%;
+    margin: 0px 8px 0px 83px;
     transition: 2.5s;
    
 }
