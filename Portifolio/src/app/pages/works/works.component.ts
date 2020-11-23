@@ -18,6 +18,10 @@ export class WorksComponent implements OnInit {
   pageSize = 6;
   pageSizeOptions: number[] = [6];
 
+
+  enableLoading:boolean;
+  enableContent:boolean;
+
   constructor(private serviceWorks:WorkServiceService) {
 
       let eventInitial:PageEvent = {
@@ -33,6 +37,10 @@ export class WorksComponent implements OnInit {
   }
 
   getDataPagination(event?:PageEvent){
+
+    this.enableLoading = true;
+    this.enableContent = false; 
+
     //console.log(event);
     if(this.indexBefore != null){
       if(event.pageIndex > this.indexBefore){
@@ -55,9 +63,15 @@ export class WorksComponent implements OnInit {
     this.serviceWorks.getDataCards(parameter).subscribe(
       (r) => {
         this.cards = r;
+        this.enableLoading = false;
+        this.enableContent = true; 
         
       },
-      (error) => { console.log(error);}
+      (error) => { 
+        console.log(error);
+        this.enableLoading = false;
+        this.enableContent = true; 
+      }
     );
     console.log(this.cards);
     //this.cards = this.cards.slice((page_number - 1) * page_size, page_number * page_size);

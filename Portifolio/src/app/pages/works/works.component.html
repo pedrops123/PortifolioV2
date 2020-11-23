@@ -1,7 +1,9 @@
-<div class="fundo-card">
+<div *ngIf="enableContent"  class="fundo-card">
   <card-layout-component *ngFor="let card of cards" [idProjeto]="card.id" [urlFoto]="card.foto" [description]="card.description" [href]="card.href"></card-layout-component>
 </div>
 
+
+<loading-gif *ngIf="enableLoading"></loading-gif>
 
   <mat-paginator [length]="totalLength"
       [pageSize]="pageSize"

@@ -34,3 +34,4 @@ C:\Portifolio_new\webApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.
 C:\Portifolio_new\webApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Portifolio_new\webApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Portifolio_new\webApi\obj\Debug\netcoreapp3.1\webApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Portifolio_new\webApi\bin\Debug\netcoreapp3.1\WebAPI.xml

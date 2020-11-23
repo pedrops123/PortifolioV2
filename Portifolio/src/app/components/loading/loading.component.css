@@ -1,0 +1,10 @@
+#gif-loading{
+    background: url(../../../assets/loading.gif) !important;
+    background-repeat: no-repeat !important;
+    border-radius: 0% !important;
+    height: 32em !important;
+    text-align: center;
+    width: 41em;
+    margin: 62px 9px 1px 220px;
+
+}

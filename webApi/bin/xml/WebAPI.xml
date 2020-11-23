@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>webApi</name>
+    </assembly>
+    <members>
+        <member name="T:webApi.Controllers.LoginController">
+            <summary>
+            Controller Login
+            </summary>
+        </member>
+        <member name="M:webApi.Controllers.LoginController.ValidaLogin(webApi.Models.LoginModel)">
+            <summary>
+            Metodo de login  manager portifolio
+            </summary>
+        </member>
+        <member name="T:webApi.Controllers.MenuPrincipalController">
+            <summary>
+            Controller menu Principal
+            </summary>/
+        </member>
+        <member name="M:webApi.Controllers.MenuPrincipalController.retornaValorTeste">
+            <summary>
+            Retorna menu principal do sistema
+            </summary>
+        </member>
+        <member name="T:webApi.Controllers.WorkController">
+            <summary>
+            Controller Meus Trabalhos
+            </summary>
+        </member>
+        <member name="M:webApi.Controllers.WorkController.getDataPagination(webApi.Models.ParameterPagination)">
+            <summary>
+            Retorna Paginação de trabalhos cadastrados no sistema
+            </summary>
+        </member>
+        <member name="T:webApi.Models.ButtonsMenuModel">
+            <summary>
+            Model Botões menu principal
+            </summary>
+        </member>
+        <member name="P:webApi.Models.ButtonsMenuModel.description">
+            <summary>
+            Descrição botão
+            </summary>
+        </member>
+        <member name="P:webApi.Models.ButtonsMenuModel.color">
+            <summary>
+            Cor botão
+            </summary>
+        </member>
+        <member name="P:webApi.Models.ButtonsMenuModel.href">
+            <summary>
+            Link botão
+            </summary>
+        </member>
+        <member name="T:webApi.Models.DataCardModel">
+            <summary>
+            Dados Card generico
+            </summary>
+        </member>
+        <member name="P:webApi.Models.DataCardModel.id">
+            <summary>
+            id Card 
+            </summary>
+        </member>
+        <member name="P:webApi.Models.DataCardModel.foto">
+            <summary>
+            foto card
+            </summary>
+        </member>
+        <member name="P:webApi.Models.DataCardModel.description">
+            <summary>
+            descrição card
+            </summary>
+        </member>
+        <member name="P:webApi.Models.DataCardModel.href">
+            <summary>
+            Link card
+            </summary>
+        </member>
+        <member name="T:webApi.Models.LoginModel">
+            <summary>
+            Model Login
+            </summary>
+        </member>
+        <member name="P:webApi.Models.LoginModel.login">
+            <summary>
+            Propriedade string login usuario
+            </summary>
+        </member>
+        <member name="P:webApi.Models.LoginModel.senha">
+            <summary>
+            Propriedade string senha usuario
+            </summary>
+        </member>
+        <member name="T:webApi.Models.ValidationLogin">
+            <summary>
+            Model Validação login
+            </summary>
+        </member>
+        <member name="P:webApi.Models.ValidationLogin.validado">
+            <summary>
+            Validado retorno login
+            </summary>
+        </member>
+        <member name="P:webApi.Models.ValidationLogin.messageErrors">
+            <summary>
+            Lista de erros retorno validação
+            </summary>
+        </member>
+        <member name="P:webApi.Models.ValidationLogin.token">
+            <summary>
+            Token retorno login
+            </summary>
+        </member>
+    </members>
+</doc>

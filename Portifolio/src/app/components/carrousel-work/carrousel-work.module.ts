@@ -5,8 +5,9 @@ import { SwiperModule, SwiperPaginationInterface } from 'ngx-swiper-wrapper';
 import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { Thumbs } from 'swiper';
+import { LightboxModule } from 'ngx-lightbox';
 
-
+/* 
 const pagination: SwiperPaginationInterface = {
   el: '.swiper-pagination',
   clickable: true
@@ -25,6 +26,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   
 };
 
+*/
 
 @NgModule({
   declarations: [
@@ -35,13 +37,17 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   ],
   imports: [
     CommonModule,
-    SwiperModule
+    SwiperModule,
+    LightboxModule
   ],
   providers:[
+    /* 
     {
+      
       provide:SWIPER_CONFIG,
       useValue:DEFAULT_SWIPER_CONFIG
     }
+    */
   ]
 })
 export class CarrouselWorkModule { }

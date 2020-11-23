@@ -3,7 +3,7 @@
     border: groove black;
     width: auto;
     height: auto;
-    margin:0px 0px 30px 29px;
+    margin:0px 0px 30px 43px;
     cursor: pointer;
     
 }
@@ -22,7 +22,7 @@
 
 #thumbs_gallery{
     background-color: rgba(0,0,0,0.4);
-    margin: 211px 0px 214px 0px;    
+    margin: 0px 0px 214px 0px;    
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -49,6 +49,10 @@ img {
     object-fit: contain;
     object-position:50% 50%;
     margin: 0px 8px 0px 83px;
-    transition: 2.5s;
+    transition: 0.8s;
    
+}
+
+#display_foto img:hover {
+    width: 28em;
 }

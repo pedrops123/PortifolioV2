@@ -20,12 +20,10 @@ namespace webApi.Repository{
                 var validaLogin = BDusers.Where(r => r.login == dadosUser.login && r.senha == dadosUser.senha ).FirstOrDefault();
                 if(validaLogin == null){
                     retorno.validado = false;
-                    retorno.token = null;
                     retorno.messageErrors.Add(new string("Usuario ou senha incorretas !"));
                 }else
                 {
                     retorno.validado = true;
-                    retorno.token = Guid.NewGuid().ToString();
                     retorno.messageErrors = null;
                 }              
             }

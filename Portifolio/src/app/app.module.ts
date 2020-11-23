@@ -34,6 +34,7 @@ import { WorkServiceService } from './services/works/work-service.service';
 import { DetailWorkComponent } from './pages/detail-work/detail-work.component';
 import { CarrouselWorkComponent } from './components/carrousel-work/carrousel-work.component';
 import { CarrouselWorkModule } from './components/carrousel-work/carrousel-work.module';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { CarrouselWorkModule } from './components/carrousel-work/carrousel-work.
     SiteLayoutComponent,
     CardLayoutComponent,
     FooterComponent,
-    DetailWorkComponent
+    DetailWorkComponent,
+    LoadingComponent
   
   ],
   imports: [

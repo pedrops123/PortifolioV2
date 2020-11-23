@@ -42,6 +42,10 @@
               "target": "Package",
               "version": "[9.2.2, )"
             },
+            "Microsoft.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.Certificate": {
               "target": "Package",
               "version": "[3.1.9, )"
