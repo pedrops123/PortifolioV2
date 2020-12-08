@@ -5,6 +5,10 @@ namespace webApi.Models {
     /// Model Botões menu principal
     /// </summary>
     public class ButtonsMenuModel {
+         /// <summary>
+        /// Primary key botao
+        /// </summary>
+        public int Id { get; set; }
         /// <summary>
         /// Descrição botão
         /// </summary>

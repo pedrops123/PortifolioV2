@@ -4,7 +4,7 @@ namespace webApi.Models {
     /// <summary>
     /// Model Login
     /// </summary>
-    public class LoginModel{
+    public class LoginModel {
 
         /// <summary>
         /// Propriedade string login usuario
@@ -16,7 +16,9 @@ namespace webApi.Models {
         /// </summary>
         public string senha { get; set; }
 
-
+        /// <summary>
+        /// Acessos usuario
+        /// </summary>
         public string roles { get; set; }
     }
 

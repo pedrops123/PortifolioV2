@@ -4,9 +4,29 @@
         <name>webApi</name>
     </assembly>
     <members>
+        <member name="T:webApi.Controllers.ContactController">
+            <summary>
+            Controller Meu Contato
+            </summary>
+        </member>
+        <member name="M:webApi.Controllers.ContactController.#ctor">
+            <summary>
+            Construtor da classe Meu Contato
+            </summary>
+        </member>
+        <member name="M:webApi.Controllers.ContactController.SendEmail">
+            <summary>
+            Metodo de enviar e-mail
+            </summary>
+        </member>
         <member name="T:webApi.Controllers.LoginController">
             <summary>
             Controller Login
+            </summary>
+        </member>
+        <member name="M:webApi.Controllers.LoginController.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Construtor da classe
             </summary>
         </member>
         <member name="M:webApi.Controllers.LoginController.ValidaLogin(webApi.Models.LoginModel)">
@@ -19,9 +39,29 @@
             Controller menu Principal
             </summary>/
         </member>
-        <member name="M:webApi.Controllers.MenuPrincipalController.retornaValorTeste">
+        <member name="M:webApi.Controllers.MenuPrincipalController.#ctor">
             <summary>
-            Retorna menu principal do sistema
+            Construtor da classe
+            </summary>
+        </member>
+        <member name="M:webApi.Controllers.MenuPrincipalController.Get">
+            <summary>
+            Retorna Dados Menu
+            </summary>
+        </member>
+        <member name="M:webApi.Controllers.MenuPrincipalController.Post(webApi.Models.ButtonsMenuModel)">
+            <summary>
+            Cadastra um Menu
+            </summary>
+        </member>
+        <member name="M:webApi.Controllers.MenuPrincipalController.Put(webApi.Models.ButtonsMenuModel)">
+            <summary>
+            Atualiza um Menu
+            </summary>
+        </member>
+        <member name="M:webApi.Controllers.MenuPrincipalController.Delete(System.Int32)">
+            <summary>
+            Deleta um menu
             </summary>
         </member>
         <member name="T:webApi.Controllers.WorkController">
@@ -29,14 +69,29 @@
             Controller Meus Trabalhos
             </summary>
         </member>
+        <member name="M:webApi.Controllers.WorkController.#ctor">
+            <summary>
+            Construtor da classe 
+            </summary>
+        </member>
         <member name="M:webApi.Controllers.WorkController.getDataPagination(webApi.Models.ParameterPagination)">
             <summary>
-            Retorna Paginação de trabalhos cadastrados no sistema
+            Retorna Paginação dos trabalhos gerais cadastrados no sistema
+            </summary>
+        </member>
+        <member name="M:webApi.Controllers.WorkController.getDetailProject(System.Int32)">
+            <summary>
+            Retorna o detalhamento do projeto pelo id 
             </summary>
         </member>
         <member name="T:webApi.Models.ButtonsMenuModel">
             <summary>
             Model Botões menu principal
+            </summary>
+        </member>
+        <member name="P:webApi.Models.ButtonsMenuModel.Id">
+            <summary>
+            Primary key botao
             </summary>
         </member>
         <member name="P:webApi.Models.ButtonsMenuModel.description">
@@ -79,6 +134,11 @@
             Link card
             </summary>
         </member>
+        <member name="T:webApi.Models.DetailProject">
+            <summary>
+            Detalhamento Projeto model 
+            </summary>
+        </member>
         <member name="T:webApi.Models.LoginModel">
             <summary>
             Model Login
@@ -94,9 +154,49 @@
             Propriedade string senha usuario
             </summary>
         </member>
+        <member name="P:webApi.Models.LoginModel.roles">
+            <summary>
+            Acessos usuario
+            </summary>
+        </member>
+        <member name="T:webApi.Models.ParameterPagination">
+            <summary>
+            Modelo parametro paginação
+            </summary>
+        </member>
+        <member name="P:webApi.Models.ParameterPagination.skip">
+            <summary>
+            Pula uma certa quantidade de dados
+            </summary>
+        </member>
+        <member name="P:webApi.Models.ParameterPagination.take">
+            <summary>
+            Coleta uma certa quantidade de dados
+            </summary>
+        </member>
+        <member name="T:webApi.Models.ValidationContactModel">
+            <summary>
+            Model validacao mensagem email
+            </summary>
+        </member>
+        <member name="P:webApi.Models.ValidationContactModel.enviado">
+            <summary>
+            Parametro que define se foi enviado ou não
+            </summary>
+        </member>
+        <member name="P:webApi.Models.ValidationContactModel.messageErrors">
+            <summary>
+            Lista de motivos na qual nao foi enviado
+            </summary>
+        </member>
         <member name="T:webApi.Models.ValidationLogin">
             <summary>
             Model Validação login
+            </summary>
+        </member>
+        <member name="M:webApi.Models.ValidationLogin.#ctor">
+            <summary>
+            Construtor validacao login
             </summary>
         </member>
         <member name="P:webApi.Models.ValidationLogin.validado">
@@ -107,6 +207,11 @@
         <member name="P:webApi.Models.ValidationLogin.messageErrors">
             <summary>
             Lista de erros retorno validação
+            </summary>
+        </member>
+        <member name="P:webApi.Models.ValidationLogin.roles">
+            <summary>
+            roles de acesso 
             </summary>
         </member>
         <member name="P:webApi.Models.ValidationLogin.token">

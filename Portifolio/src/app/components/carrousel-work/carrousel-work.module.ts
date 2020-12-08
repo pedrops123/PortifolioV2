@@ -1,3 +1,4 @@
+import { AppModule } from './../../app.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarrouselWorkComponent } from './carrousel-work.component';
@@ -6,6 +7,8 @@ import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { Thumbs } from 'swiper';
 import { LightboxModule } from 'ngx-lightbox';
+import { LoadingModule } from '../loading/loading.module';
+
 
 /* 
 const pagination: SwiperPaginationInterface = {
@@ -38,7 +41,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   imports: [
     CommonModule,
     SwiperModule,
-    LightboxModule
+    LightboxModule,
+    LoadingModule
   ],
   providers:[
     /* 

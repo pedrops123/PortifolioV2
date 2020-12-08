@@ -7,6 +7,9 @@ namespace webApi.Models {
     /// </summary>
     public class ValidationLogin {
 
+        /// <summary>
+        /// Construtor validacao login
+        /// </summary>
         public ValidationLogin(){
             messageErrors = new List<string>();
         }
@@ -19,6 +22,10 @@ namespace webApi.Models {
         /// Lista de erros retorno validação
         /// </summary>
         public List<string> messageErrors { get; set;}
+        /// <summary>
+        /// roles de acesso 
+        /// </summary>
+        public string roles { get; set; }
         /// <summary>
         /// Token retorno login
         /// </summary>

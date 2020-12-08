@@ -18,8 +18,11 @@ namespace webApi.Controllers
     [Route("Login")]
     public class LoginController
     {
-        LoginRepository repositorio;
+        private LoginRepository repositorio;
         IConfiguration configurationGlobal;
+        /// <summary>
+        /// Construtor da classe
+        /// </summary>
         public LoginController(IConfiguration configuration){
             repositorio = new LoginRepository();
             this.configurationGlobal = configuration;
@@ -38,6 +41,7 @@ namespace webApi.Controllers
            if(result.IsValid){
               retornoLogin =  repositorio.validaLogin(dadosUser);
               if(retornoLogin.validado){
+                  dadosUser.roles = retornoLogin.roles;
                   TokenService tokenServiceClass = new TokenService(configurationGlobal);
                   retornoLogin.token =  tokenServiceClass.GenerateToken(dadosUser);
               }

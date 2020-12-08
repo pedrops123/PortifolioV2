@@ -32,7 +32,7 @@ export class MenuPrincipalComponent implements OnInit {
   
   getIdDescription(){
     let id = this.routerActive.snapshot.paramMap.get('idWork');
-    console.log(id);
+    //console.log(id);
     return id;
   }
   

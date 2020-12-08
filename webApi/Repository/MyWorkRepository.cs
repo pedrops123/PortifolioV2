@@ -22,9 +22,22 @@ namespace webApi.Repository {
             return listaCards.Skip(parameters.skip).Take(parameters.take).ToList();
         }
 
+        public DetailProject getDetailProjectByID(int idProjeto)
+        {
+            List<string> listaFotosProjeto = new List<string>();
 
-
-
+            for(int i=0; i <= 18; i++){
+                listaFotosProjeto.Add("https://picsum.photos/200/300");
+            }
+            
+            return new DetailProject(){
+                ListaGaleria = listaFotosProjeto,
+                descriptionWork = new DescriptionBoxModel(){
+                    title = "Titulo do projeto",
+                    description = "Aqui vai uma breve explicação do projeto , podera ter espaço <br/><br/> ou qualquer outra lorota."
+                }
+            };
+        }
     }
 
 }

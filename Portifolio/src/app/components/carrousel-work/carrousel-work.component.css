@@ -22,7 +22,7 @@
 
 #thumbs_gallery{
     background-color: rgba(0,0,0,0.4);
-    margin: 0px 0px 214px 0px;    
+    margin: 0px 24px 214px 0px; 
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

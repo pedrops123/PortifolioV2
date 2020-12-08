@@ -35,6 +35,8 @@ import { DetailWorkComponent } from './pages/detail-work/detail-work.component';
 import { CarrouselWorkComponent } from './components/carrousel-work/carrousel-work.component';
 import { CarrouselWorkModule } from './components/carrousel-work/carrousel-work.module';
 import { LoadingComponent } from './components/loading/loading.component';
+import { DetailWorkService } from './services/detail-work/detail-work.service';
+import { LoadingModule } from './components/loading/loading.module';
 
 @NgModule({
   declarations: [
@@ -48,8 +50,7 @@ import { LoadingComponent } from './components/loading/loading.component';
     SiteLayoutComponent,
     CardLayoutComponent,
     FooterComponent,
-    DetailWorkComponent,
-    LoadingComponent
+    DetailWorkComponent
   
   ],
   imports: [
@@ -69,12 +70,14 @@ import { LoadingComponent } from './components/loading/loading.component';
     MatPaginatorModule,
     MatMenuModule,
     MatTooltipModule,
-    CarrouselWorkModule
+    CarrouselWorkModule,
+    LoadingModule
 
   ],
   providers: [
     MenuServiceService,
-    WorkServiceService
+    WorkServiceService,
+    DetailWorkService
   ],
   bootstrap: [AppComponent]
 }) 

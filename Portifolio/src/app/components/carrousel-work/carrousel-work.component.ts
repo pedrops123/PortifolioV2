@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Lightbox } from 'ngx-lightbox';
 import { SwiperDirective } from 'ngx-swiper-wrapper';
 import { arrayFotos } from './CarrouselFotos';
@@ -10,28 +10,40 @@ import { arrayFotos } from './CarrouselFotos';
   templateUrl: './carrousel-work.component.html',
   styleUrls: ['./carrousel-work.component.css']
 })
-export class CarrouselWorkComponent implements OnInit {
+export class CarrouselWorkComponent implements OnInit  {
 
-    data = arrayFotos;  
+    @Input("fotos") data:string[];  
 
     _album = [];
     fotoThumbSelecionada :number = 0;
+    loading:boolean;
+    mostrar:boolean;
+
     /*
-    fotoSelecionadaDisplay:string = "";
-    
+      fotoSelecionadaDisplay:string = "";
    */
   constructor(private _lightbox: Lightbox) { 
-    
-    this.data.forEach(r => this._album.push(
-      {
-        src:r.url,
-        caption:'Descritivo foto',
-        thumb:r.url
-      }
-    ));
-
+    this.loading = true;
+    this.mostrar = false;
+     // console.log(this.data);
+     setTimeout(()=>{
+      this.data.forEach(r => this._album.push(
+        {
+          src:r,
+          caption:'Descritivo foto',
+          thumb:r
+        }
+      ));
+      this.loading = false;
+      this.mostrar = true;
+     },1000);
+     
+   
     //this.mostraDisplayFoto(this.data[0].url ,this.data[0].id);
   }
+  
+
+
 
   ngOnInit(): void {
   }

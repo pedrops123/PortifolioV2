@@ -15,21 +15,42 @@ namespace webApi.Controllers {
     [Route("Menu")]
     public class MenuPrincipalController
     {
-        MenuPrincipalRepository repository;
+      private MenuPrincipalRepository repository;
+        /// <summary>
+        /// Construtor da classe
+        /// </summary>
         public MenuPrincipalController()
         {
             repository = new MenuPrincipalRepository();
         }
         
         /// <summary>
-        /// Retorna menu principal do sistema
+        /// Retorna Dados Menu
         /// </summary>
         [HttpGet]
-        [Route("RetornaMenu")]
         [AllowAnonymous]
-        public List<ButtonsMenuModel> retornaValorTeste(){
-            return repository.retornaDadosMenu();
-        }
+        public List<ButtonsMenuModel> Get() => repository.GetMenu();
+
+        /// <summary>
+        /// Cadastra um Menu
+        /// </summary>
+        [HttpPost]
+        public ButtonsMenuModel Post([FromBody] ButtonsMenuModel parameter) => repository.PostMenu(parameter);
+
+        /// <summary>
+        /// Atualiza um Menu
+        /// </summary>
+        [HttpPut]
+        public ButtonsMenuModel Put([FromBody] ButtonsMenuModel parameter) => repository.PutMenu(parameter);
+
+        /// <summary>
+        /// Deleta um menu
+        /// </summary>
+        [HttpDelete]
+        public bool Delete([FromQuery] int id) => repository.DeleteMenu(id);
+
+
+
 
     }
 }

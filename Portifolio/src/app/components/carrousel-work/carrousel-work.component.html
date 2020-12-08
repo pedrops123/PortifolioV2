@@ -1,5 +1,6 @@
 <div id="component_carrousel">
-  <div id="thumbs_gallery">
+  <div  id="thumbs_gallery">
+    <loading-gif *ngIf="loading"></loading-gif>
     <div *ngFor="let fotos of _album; let i = index" [ngClass]="{ 'thumbs_active': fotoThumbSelecionada === fotos.id }" (click)="open(i)" class="thumbs">
         <img [src]="fotos.thumb">
     </div>

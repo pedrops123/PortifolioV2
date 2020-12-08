@@ -9,7 +9,8 @@ namespace webApi.Repository{
         List<LoginModel> BDusers = new List<LoginModel>(){
             new LoginModel(){
                 login  = "pedro.furlan",
-                senha =  "123456"
+                senha =  "123456",
+                roles = "Adm"
             }
         };        
 
@@ -24,6 +25,7 @@ namespace webApi.Repository{
                 }else
                 {
                     retorno.validado = true;
+                    retorno.roles = validaLogin.roles;
                     retorno.messageErrors = null;
                 }              
             }
