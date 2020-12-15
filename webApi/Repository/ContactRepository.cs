@@ -25,7 +25,7 @@ namespace webApi.Repository {
                 
 
                 SmtpClient smtp = new SmtpClient("smtp-mail.outlook.com");
-                smtp.Credentials = new NetworkCredential("pedro.furlan1304@hotmail.com", "72473541");
+
                 
                 smtp.Send(mail);
 
