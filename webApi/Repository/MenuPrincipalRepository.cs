@@ -1,31 +1,17 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Contexto;
+using Microsoft.Extensions.Configuration;
 using webApi.Models;
 
 namespace webApi.Repository {
     public class MenuPrincipalRepository {
-       private List<ButtonsMenuModel> listaRetorno = new List<ButtonsMenuModel>(){
-                new ButtonsMenuModel(){
-                    Id = 1,
-                    description = "Inicio",
-                    href = "inicio",
-                    color = null
-                },
-                 new ButtonsMenuModel(){
-                    Id = 2,
-                    description = "Meus Trabalhos",
-                    href = "work",
-                    color = null
-                },
-                 new ButtonsMenuModel(){
-                    Id = 3,
-                    description = "Contato",
-                    href = "contact",
-                    color = null
-                }
-            };
-        public MenuPrincipalRepository(){
+
+       private ContextoDB contexto;
+      
+        public MenuPrincipalRepository(IConfiguration configuration){
+            this.contexto = new ContextoDB(configuration);
             /*
             this.listaRetorno = new List<ButtonsMenuModel>(){
                 new ButtonsMenuModel(){
@@ -51,14 +37,13 @@ namespace webApi.Repository {
         }
 
         public List<ButtonsMenuModel> GetMenu(){
-            return this.listaRetorno;
+            return contexto.TabelaButtonsMenu.ToList();
         }
         public ButtonsMenuModel PostMenu(ButtonsMenuModel parameter){
             try
             {
-                var ultimoRegistroID = this.listaRetorno.LastOrDefault().Id;
-                parameter.Id =  ultimoRegistroID + 1;
-                this.listaRetorno.Add(parameter);
+                var registro = contexto.TabelaButtonsMenu.Add(parameter);
+                contexto.SaveChanges();
             }
             catch(Exception e){
                 throw e;
@@ -69,13 +54,14 @@ namespace webApi.Repository {
         public ButtonsMenuModel PutMenu(ButtonsMenuModel parameter){
             try
             {
-                var registro = this.listaRetorno.Where(r=>r.Id == parameter.Id).FirstOrDefault();
-                registro = parameter;
+                var registro = this.contexto.TabelaButtonsMenu.Where(r=>r.Id == parameter.Id).First();
+                registro.description = parameter.description;
+                registro.href = parameter.href;
+                contexto.SaveChanges();
             }
             catch(Exception e){
                 throw e;
             }
-
             return parameter;
         }
 
@@ -84,8 +70,9 @@ namespace webApi.Repository {
             bool retorno = false;
             try
             {
-                var itemLista = this.listaRetorno.Where(r => r.Id == id).FirstOrDefault();
-                this.listaRetorno.Remove(itemLista);    
+                var itemLista = this.contexto.TabelaButtonsMenu.Where(r => r.Id == id).First();
+                contexto.TabelaButtonsMenu.Remove(itemLista);    
+                contexto.SaveChanges();
                 retorno = true;
             }
             catch(Exception e){

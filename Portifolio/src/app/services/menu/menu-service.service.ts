@@ -10,9 +10,10 @@ export class MenuServiceService {
   constructor(private Client:HttpClient) { }
 
     getMenuInicial():Observable<ButtonsMenu[]>{
-       return this.Client.get<ButtonsMenu[]>(`${ environment.app_server }/Menu/RetornaMenu`);
+       return this.Client.get<ButtonsMenu[]>(`${ environment.app_server }/Menu`);
     }
 
 
 
 }
+ 

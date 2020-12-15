@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Authorization;
@@ -24,9 +25,41 @@ namespace webApi.Controllers
         /// Construtor da classe
         /// </summary>
         public LoginController(IConfiguration configuration){
-            repositorio = new LoginRepository();
+            repositorio = new LoginRepository(configuration);
             this.configurationGlobal = configuration;
         }
+
+        /// <summary>
+        /// Coleta lista de usuarios
+        /// </summary>
+        [HttpGet]
+        public List<LoginModel> get() => repositorio.GetLogin();
+
+         /// <summary>
+        /// Pesquisa usuario por ID
+        /// </summary>
+        [HttpGet]
+        [Route("getById")]
+        public LoginModel getById([FromQuery]int id) => repositorio.getLoginByID(id);
+
+        /// <summary>
+        /// Cadastra um novo usuario
+        /// </summary>
+        [HttpPost]
+        public LoginModel post([FromBody] LoginModel login) => repositorio.postLogin(login);
+
+        /// <summary>
+        /// Atualiza um usuario
+        /// </summary>
+        [HttpPut]
+        public LoginModel put([FromBody] LoginModel login) => repositorio.PutLogin(login);
+
+        /// <summary>
+        /// Deleta um usuario
+        /// </summary>
+        [HttpDelete]
+        public LoginModel delete([FromQuery] int id) => repositorio.DeleteLogin(id);
+
 
         /// <summary>
         /// Metodo de login  manager portifolio

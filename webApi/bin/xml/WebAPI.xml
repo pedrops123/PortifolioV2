@@ -4,6 +4,11 @@
         <name>webApi</name>
     </assembly>
     <members>
+        <member name="M:GenerateData.#ctor(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Popula todas as tabelas com os dados default
+            </summary>
+        </member>
         <member name="T:webApi.Controllers.ContactController">
             <summary>
             Controller Meu Contato
@@ -29,6 +34,31 @@
             Construtor da classe
             </summary>
         </member>
+        <member name="M:webApi.Controllers.LoginController.get">
+            <summary>
+            Coleta lista de usuarios
+            </summary>
+        </member>
+        <member name="M:webApi.Controllers.LoginController.getById(System.Int32)">
+            <summary>
+            Pesquisa usuario por ID
+            </summary>
+        </member>
+        <member name="M:webApi.Controllers.LoginController.post(webApi.Models.LoginModel)">
+            <summary>
+            Cadastra um novo usuario
+            </summary>
+        </member>
+        <member name="M:webApi.Controllers.LoginController.put(webApi.Models.LoginModel)">
+            <summary>
+            Atualiza um usuario
+            </summary>
+        </member>
+        <member name="M:webApi.Controllers.LoginController.delete(System.Int32)">
+            <summary>
+            Deleta um usuario
+            </summary>
+        </member>
         <member name="M:webApi.Controllers.LoginController.ValidaLogin(webApi.Models.LoginModel)">
             <summary>
             Metodo de login  manager portifolio
@@ -39,7 +69,7 @@
             Controller menu Principal
             </summary>/
         </member>
-        <member name="M:webApi.Controllers.MenuPrincipalController.#ctor">
+        <member name="M:webApi.Controllers.MenuPrincipalController.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
             Construtor da classe
             </summary>
@@ -142,6 +172,11 @@
         <member name="T:webApi.Models.LoginModel">
             <summary>
             Model Login
+            </summary>
+        </member>
+        <member name="P:webApi.Models.LoginModel.id">
+            <summary>
+            Propriedade id login usuario
             </summary>
         </member>
         <member name="P:webApi.Models.LoginModel.login">

@@ -19,9 +19,10 @@ namespace webApi.Controllers {
         /// <summary>
         /// Construtor da classe
         /// </summary>
-        public MenuPrincipalController()
+
+        public MenuPrincipalController(IConfiguration configuration)
         {
-            repository = new MenuPrincipalRepository();
+            repository = new MenuPrincipalRepository(configuration);
         }
         
         /// <summary>

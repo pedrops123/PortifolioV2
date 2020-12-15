@@ -1,5 +1,6 @@
 
 using System;
+using System.Net;
 using System.Net.Mail;
 using webApi.Models;
 
@@ -16,13 +17,16 @@ namespace webApi.Repository {
             try
             {
                 MailMessage mail = new MailMessage();
-                mail.From = new MailAddress("testePortifolio@hotmail.com");
+                mail.From = new MailAddress("pedro.furlan1304@hotmail.com");
                 mail.To.Add("pedro.furlan1304@hotmail.com");
 
                 mail.Subject = "Teste email";
                 mail.Body = "E-mail enviado com sucesso !";
+                
 
-                SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+                SmtpClient smtp = new SmtpClient("smtp-mail.outlook.com");
+                smtp.Credentials = new NetworkCredential("pedro.furlan1304@hotmail.com", "72473541");
+                
                 smtp.Send(mail);
 
                 retorno.enviado = true;
