@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Commands;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -33,32 +34,37 @@ namespace webApi.Controllers
         /// Coleta lista de usuarios
         /// </summary>
         [HttpGet]
-        public List<LoginModel> get() => repositorio.GetLogin();
+        [Authorize(Roles = "Adm")]
+        public RetornoGlobal<List<UsuariosModel>> get() => repositorio.GetLogin();
 
          /// <summary>
         /// Pesquisa usuario por ID
         /// </summary>
         [HttpGet]
+        [Authorize(Roles = "Adm")]
         [Route("getById")]
-        public LoginModel getById([FromQuery]int id) => repositorio.getLoginByID(id);
+        public RetornoGlobal<UsuariosModel> getById([FromQuery]int id) => repositorio.getLoginByID(id);
 
         /// <summary>
         /// Cadastra um novo usuario
         /// </summary>
         [HttpPost]
-        public LoginModel post([FromBody] LoginModel login) => repositorio.postLogin(login);
+        [Authorize(Roles = "Adm")]
+        public RetornoGlobal<UsuariosModel> post([FromBody] CreateLoginCommand login) => repositorio.postLogin(login);
 
         /// <summary>
         /// Atualiza um usuario
         /// </summary>
         [HttpPut]
-        public LoginModel put([FromBody] LoginModel login) => repositorio.PutLogin(login);
+        [Authorize(Roles = "Adm")]
+        public RetornoGlobal<UsuariosModel> put([FromBody] UpdateLoginCommand login) => repositorio.PutLogin(login);
 
         /// <summary>
         /// Deleta um usuario
         /// </summary>
         [HttpDelete]
-        public LoginModel delete([FromQuery] int id) => repositorio.DeleteLogin(id);
+        [Authorize(Roles = "Adm")]
+        public RetornoGlobal<UsuariosModel> delete([FromQuery] int id) => repositorio.DeleteLogin(id);
 
 
         /// <summary>
@@ -67,26 +73,7 @@ namespace webApi.Controllers
         [HttpPost]
         [Route("Logar")]
         [AllowAnonymous]
-        public ValidationLogin ValidaLogin(LoginModel dadosUser){
-           ValidationLogin retornoLogin = new ValidationLogin();
-           LoginValidator validator = new LoginValidator();
-           ValidationResult result =  validator.Validate(dadosUser); 
-           if(result.IsValid){
-              retornoLogin =  repositorio.validaLogin(dadosUser);
-              if(retornoLogin.validado){
-                  dadosUser.roles = retornoLogin.roles;
-                  TokenService tokenServiceClass = new TokenService(configurationGlobal);
-                  retornoLogin.token =  tokenServiceClass.GenerateToken(dadosUser);
-              }
-           }
-           else 
-           {  
-               result.Errors.ToList().ForEach(
-                   f => retornoLogin.messageErrors.Add(f.ErrorMessage) 
-               );
-           }
-            return retornoLogin;
-        }
+        public ValidationLogin ValidaLogin(LoginFormModel dadosUser) => repositorio.ValidationLogin(dadosUser , configurationGlobal);
 
 
 

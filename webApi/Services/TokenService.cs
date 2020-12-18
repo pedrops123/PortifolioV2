@@ -14,7 +14,7 @@ namespace webApi.Services {
             hashServer = configuration.GetSection("hashServer").Value;
         }
 
-        public string GenerateToken(LoginModel modelUsuario){
+        public string GenerateToken(LoginFormModel modelUsuario , string roles){
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(hashServer);
@@ -22,8 +22,8 @@ namespace webApi.Services {
                 Subject = new System.Security.Claims.ClaimsIdentity(
                     new Claim[]{
                         new Claim(ClaimTypes.Name,modelUsuario.login),
-                        new Claim(ClaimTypes.Role,modelUsuario.roles)
-
+                        new Claim(ClaimTypes.Role, roles)
+ 
                 }),
                 Expires = DateTime.UtcNow.AddHours(2),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key),SecurityAlgorithms.HmacSha256Signature)

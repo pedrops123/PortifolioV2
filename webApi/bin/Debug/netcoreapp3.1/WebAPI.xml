@@ -4,6 +4,36 @@
         <name>webApi</name>
     </assembly>
     <members>
+        <member name="P:Commands.CreateLoginCommand.Login">
+            <summary>
+            Nome de usuario
+            </summary>
+        </member>
+        <member name="P:Commands.CreateLoginCommand.Senha">
+            <summary>
+            Propriedade string senha usuario
+            </summary>
+        </member>
+        <member name="P:Commands.CreateLoginCommand.UsuarioAcessoId">
+            <summary>
+            Acesso usuario fk
+            </summary>
+        </member>
+        <member name="P:Commands.UpdateLoginCommand.Id">
+            <summary>
+            id usuario 
+            </summary>
+        </member>
+        <member name="P:Commands.UpdateLoginCommand.Senha">
+            <summary>
+            Propriedade string senha usuario
+            </summary>
+        </member>
+        <member name="P:Commands.UpdateLoginCommand.UsuarioAcessoId">
+            <summary>
+            Acesso usuario fk
+            </summary>
+        </member>
         <member name="M:GenerateData.#ctor(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <summary>
             Popula todas as tabelas com os dados default
@@ -44,12 +74,12 @@
             Pesquisa usuario por ID
             </summary>
         </member>
-        <member name="M:webApi.Controllers.LoginController.post(webApi.Models.LoginModel)">
+        <member name="M:webApi.Controllers.LoginController.post(Commands.CreateLoginCommand)">
             <summary>
             Cadastra um novo usuario
             </summary>
         </member>
-        <member name="M:webApi.Controllers.LoginController.put(webApi.Models.LoginModel)">
+        <member name="M:webApi.Controllers.LoginController.put(Commands.UpdateLoginCommand)">
             <summary>
             Atualiza um usuario
             </summary>
@@ -59,7 +89,7 @@
             Deleta um usuario
             </summary>
         </member>
-        <member name="M:webApi.Controllers.LoginController.ValidaLogin(webApi.Models.LoginModel)">
+        <member name="M:webApi.Controllers.LoginController.ValidaLogin(webApi.Models.LoginFormModel)">
             <summary>
             Metodo de login  manager portifolio
             </summary>
@@ -169,29 +199,34 @@
             Detalhamento Projeto model 
             </summary>
         </member>
-        <member name="T:webApi.Models.LoginModel">
+        <member name="T:webApi.Models.UsuariosModel">
             <summary>
             Model Login
             </summary>
         </member>
-        <member name="P:webApi.Models.LoginModel.id">
+        <member name="P:webApi.Models.UsuariosModel.Id">
             <summary>
             Propriedade id login usuario
             </summary>
         </member>
-        <member name="P:webApi.Models.LoginModel.login">
+        <member name="P:webApi.Models.UsuariosModel.Login">
             <summary>
             Propriedade string login usuario
             </summary>
         </member>
-        <member name="P:webApi.Models.LoginModel.senha">
+        <member name="P:webApi.Models.UsuariosModel.Senha">
             <summary>
             Propriedade string senha usuario
             </summary>
         </member>
-        <member name="P:webApi.Models.LoginModel.roles">
+        <member name="P:webApi.Models.UsuariosModel.UsuarioAcessoId">
             <summary>
-            Acessos usuario
+            Acesso usuario fk
+            </summary>
+        </member>
+        <member name="P:webApi.Models.UsuariosModel.UsuarioAcesso">
+            <summary>
+            Acesso usuario
             </summary>
         </member>
         <member name="T:webApi.Models.ParameterPagination">
@@ -207,6 +242,26 @@
         <member name="P:webApi.Models.ParameterPagination.take">
             <summary>
             Coleta uma certa quantidade de dados
+            </summary>
+        </member>
+        <member name="T:webApi.Models.UsuarioAcesso">
+            <summary>
+            Tabela de acessos usuarios 
+            </summary>
+        </member>
+        <member name="P:webApi.Models.UsuarioAcesso.Id">
+            <summary>
+            Tabela de acessos usuarios 
+            </summary>
+        </member>
+        <member name="P:webApi.Models.UsuarioAcesso.DescricaoAcesso">
+            <summary>
+            Tipo Acesso 
+            </summary>
+        </member>
+        <member name="P:webApi.Models.UsuarioAcesso.LoginModel">
+            <summary>
+            Usuarios
             </summary>
         </member>
         <member name="T:webApi.Models.ValidationContactModel">

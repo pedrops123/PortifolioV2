@@ -3,7 +3,7 @@ using FluentValidation;
 using webApi.Models;
 
 namespace webApi.Validators {
-    public class LoginValidator : AbstractValidator<LoginModel>{
+    public class LoginValidator : AbstractValidator<LoginFormModel>{
 
         public LoginValidator(){
 

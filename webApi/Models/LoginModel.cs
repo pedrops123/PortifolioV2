@@ -1,37 +1,43 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Newtonsoft.Json;
 
 namespace webApi.Models {
     /// <summary>
     /// Model Login
     /// </summary>
-    [Table("Usuarios")]
-    public class LoginModel {
+    [Table("UsuariosModel")]
+    public class UsuariosModel {
 
         /// <summary>
         /// Propriedade id login usuario
         /// </summary>
         [Key]
-        public int id { get; set; }    
+        public int Id { get; set; }    
 
         /// <summary>
         /// Propriedade string login usuario
         /// </summary>
         [MaxLength(20)]
-        public string login { get; set; }
+        public string Login { get; set; }
 
         /// <summary>
         /// Propriedade string senha usuario
         /// </summary>
         [MaxLength(100)]
-        public string senha { get; set; }
+        public string Senha { get; set; }
 
         /// <summary>
-        /// Acessos usuario
+        /// Acesso usuario fk
         /// </summary>
-        [MaxLength(10)]
-        public string roles { get; set; }
+        public int UsuarioAcessoId { get; set; }
+
+        /// <summary>
+        /// Acesso usuario
+        /// </summary>
+       [JsonIgnore]
+        public virtual UsuarioAcesso UsuarioAcesso { get; set; }
     }
 
 }

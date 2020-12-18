@@ -11,6 +11,7 @@ namespace webApi.Repository {
        private ContextoDB contexto;
       
         public MenuPrincipalRepository(IConfiguration configuration){
+
             this.contexto = new ContextoDB(configuration);
             /*
             this.listaRetorno = new List<ButtonsMenuModel>(){
@@ -36,47 +37,74 @@ namespace webApi.Repository {
             */
         }
 
-        public List<ButtonsMenuModel> GetMenu(){
-            return contexto.TabelaButtonsMenu.ToList();
+        public RetornoGlobal<List<ButtonsMenuModel>> GetMenu(){
+            RetornoGlobal<List<ButtonsMenuModel>> retorno = new RetornoGlobal<List<ButtonsMenuModel>>();
+
+            try
+            {
+                retorno.status = true;
+                retorno.RetornoObjeto = contexto.TabelaButtonsMenu.ToList();;
+            }
+            catch(Exception e){
+                retorno.status = false;
+                retorno.errors.Append(e.Message);
+                retorno.errors.Append(e.InnerException.ToString());
+            }
+            return retorno;
         }
-        public ButtonsMenuModel PostMenu(ButtonsMenuModel parameter){
+        public RetornoGlobal<ButtonsMenuModel> PostMenu(ButtonsMenuModel parameter){
+            RetornoGlobal<ButtonsMenuModel> retorno = new RetornoGlobal<ButtonsMenuModel>();
             try
             {
                 var registro = contexto.TabelaButtonsMenu.Add(parameter);
                 contexto.SaveChanges();
+
+                retorno.status = true;
+                retorno.RetornoObjeto = parameter;
             }
             catch(Exception e){
-                throw e;
+                retorno.status = false;
+                retorno.errors.Append(e.Message);
+                retorno.errors.Append(e.InnerException.ToString());
             }
-            return parameter;
+            return retorno;
         }
 
-        public ButtonsMenuModel PutMenu(ButtonsMenuModel parameter){
+        public RetornoGlobal<ButtonsMenuModel> PutMenu(ButtonsMenuModel parameter){
+            RetornoGlobal<ButtonsMenuModel> retorno = new RetornoGlobal<ButtonsMenuModel>();
             try
             {
                 var registro = this.contexto.TabelaButtonsMenu.Where(r=>r.Id == parameter.Id).First();
                 registro.description = parameter.description;
                 registro.href = parameter.href;
                 contexto.SaveChanges();
+
+                retorno.status = true;
+                retorno.RetornoObjeto = parameter;
             }
             catch(Exception e){
-                throw e;
+              retorno.status = false;
+              retorno.errors.Append(e.Message);
+              retorno.errors.Append(e.InnerException.ToString());
             }
-            return parameter;
+            return retorno;
         }
 
 
-        public bool DeleteMenu(int id){
-            bool retorno = false;
+        public RetornoGlobal<ButtonsMenuModel> DeleteMenu(int id){
+            RetornoGlobal<ButtonsMenuModel> retorno = new RetornoGlobal<ButtonsMenuModel>();
             try
             {
                 var itemLista = this.contexto.TabelaButtonsMenu.Where(r => r.Id == id).First();
                 contexto.TabelaButtonsMenu.Remove(itemLista);    
                 contexto.SaveChanges();
-                retorno = true;
+                retorno.status = true;
+                retorno.RetornoObjeto = itemLista;
             }
             catch(Exception e){
-                throw e;
+              retorno.status = false;
+              retorno.errors.Append(e.Message);
+              retorno.errors.Append(e.InnerException.ToString());
             }
             return retorno;
         }

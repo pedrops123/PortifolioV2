@@ -9,7 +9,8 @@ namespace Contexto {
         private string connectionStrings = "";
 
        public DbSet<ButtonsMenuModel> TabelaButtonsMenu {get; set;}
-       public DbSet<LoginModel> TabelaUsuarios {get; set;}
+       public DbSet<UsuariosModel> TabelaUsuarios {get; set;}
+       public DbSet<UsuarioAcesso> TabelaAcessos{ get; set; }
 
     public ContextoDB(IConfiguration configuration){
         //this.connectionStrings = configuration.GetSection("ConnectionStrings").Value;
@@ -17,11 +18,30 @@ namespace Contexto {
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
-        //Usar chumbado por momento
+        // Usar chumbado por momento
         optionsBuilder.UseSqlServer(@"Data Source=SPDECPD23\SQLEXPRESS;Initial Catalog=Portifolio;Integrated Security=True;Connect Timeout=30; Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
     }
 
    protected override void OnModelCreating(ModelBuilder builder){
+
+        
+        // Configuration Login Model
+        builder.Entity<UsuariosModel>(entity => 
+                entity
+                .HasOne(acs => acs.UsuarioAcesso)
+                .WithMany(r => r.LoginModel)
+                .HasForeignKey(f => f.UsuarioAcessoId)
+        );
+
+        // Configuration UsuarioAcesso 
+        builder.Entity<UsuarioAcesso>(entity =>
+            entity
+            .HasMany(r => r.LoginModel)
+            .WithOne(r => r.UsuarioAcesso)
+        );
+       
+        
+
         GenerateData PrepareData = new GenerateData(builder);
     }
     

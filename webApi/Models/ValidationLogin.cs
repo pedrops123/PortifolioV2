@@ -25,7 +25,7 @@ namespace webApi.Models {
         /// <summary>
         /// roles de acesso 
         /// </summary>
-        public string roles { get; set; }
+        public UsuarioAcesso roles { get; set; }
         /// <summary>
         /// Token retorno login
         /// </summary>

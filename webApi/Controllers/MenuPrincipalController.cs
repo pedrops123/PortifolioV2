@@ -30,25 +30,28 @@ namespace webApi.Controllers {
         /// </summary>
         [HttpGet]
         [AllowAnonymous]
-        public List<ButtonsMenuModel> Get() => repository.GetMenu();
+        public RetornoGlobal<List<ButtonsMenuModel>> Get() => repository.GetMenu();
 
         /// <summary>
         /// Cadastra um Menu
         /// </summary>
         [HttpPost]
-        public ButtonsMenuModel Post([FromBody] ButtonsMenuModel parameter) => repository.PostMenu(parameter);
+        [Authorize(Roles = "Adm")]
+        public RetornoGlobal<ButtonsMenuModel> Post([FromBody] ButtonsMenuModel parameter) => repository.PostMenu(parameter);
 
         /// <summary>
         /// Atualiza um Menu
         /// </summary>
         [HttpPut]
-        public ButtonsMenuModel Put([FromBody] ButtonsMenuModel parameter) => repository.PutMenu(parameter);
+        [Authorize(Roles = "Adm")]
+        public RetornoGlobal<ButtonsMenuModel> Put([FromBody] ButtonsMenuModel parameter) => repository.PutMenu(parameter);
 
         /// <summary>
         /// Deleta um menu
         /// </summary>
         [HttpDelete]
-        public bool Delete([FromQuery] int id) => repository.DeleteMenu(id);
+        [Authorize(Roles = "Adm")]
+        public RetornoGlobal<ButtonsMenuModel> Delete([FromQuery] int id) => repository.DeleteMenu(id);
 
 
 

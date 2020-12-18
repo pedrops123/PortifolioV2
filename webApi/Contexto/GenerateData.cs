@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using webApi.Models;
 
@@ -8,9 +9,22 @@ public class GenerateData {
        /// </summary>
     public GenerateData(ModelBuilder modelBuilder){
          populaTabelaBotoes(modelBuilder);
+         populaTabelaAcesso(modelBuilder);
          populaUsuarios(modelBuilder);
     }
 
+    private void populaTabelaAcesso(ModelBuilder builder){
+       
+        builder.Entity<UsuarioAcesso>().HasData(
+             new UsuarioAcesso(){
+                Id = 1,
+                DescricaoAcesso = "Adm"
+            },
+            new UsuarioAcesso(){
+                Id = 2,
+                DescricaoAcesso = "User"
+            });
+    }
     private void populaTabelaBotoes(ModelBuilder builder){
           builder.Entity<ButtonsMenuModel>()
             .HasData(
@@ -37,12 +51,13 @@ public class GenerateData {
     }
 
     private void populaUsuarios(ModelBuilder builder){
-        builder.Entity<LoginModel>().HasData(
-            new LoginModel(){
-                    id = 1,
-                    login = "pedro.furlan",
-                    senha = "123456",
-                    roles = "Adm" 
+        builder.Entity<UsuariosModel>().HasData(
+            new UsuariosModel(){
+                    Id = 1,
+                    Login = "pedro.furlan",
+                    Senha = "123456",
+                    UsuarioAcessoId = 1
+                   // UsuarioAcessoId = 1
                 }
             );
     }
