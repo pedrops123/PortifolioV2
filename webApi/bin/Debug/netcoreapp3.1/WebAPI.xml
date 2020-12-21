@@ -4,6 +4,11 @@
         <name>webApi</name>
     </assembly>
     <members>
+        <member name="T:Commands.CreateLoginCommand">
+            <summary>
+            Classe de criação Usuario
+            </summary>
+        </member>
         <member name="P:Commands.CreateLoginCommand.Login">
             <summary>
             Nome de usuario
@@ -19,6 +24,11 @@
             Acesso usuario fk
             </summary>
         </member>
+        <member name="T:Commands.UpdateLoginCommand">
+            <summary>
+            Classe de atualização Usuario
+            </summary>
+        </member>
         <member name="P:Commands.UpdateLoginCommand.Id">
             <summary>
             id usuario 
@@ -32,6 +42,41 @@
         <member name="P:Commands.UpdateLoginCommand.UsuarioAcessoId">
             <summary>
             Acesso usuario fk
+            </summary>
+        </member>
+        <member name="T:Commands.CreateMenuCommand">
+            <summary>
+            Classe de criação Botão menu
+            </summary>
+        </member>
+        <member name="P:Commands.CreateMenuCommand.description">
+            <summary>
+            Descrição botão
+            </summary>
+        </member>
+        <member name="P:Commands.CreateMenuCommand.href">
+            <summary>
+            Link botão
+            </summary>
+        </member>
+        <member name="T:Commands.UpdateMenuCommand">
+            <summary>
+            Classe de Atualização Botão menu
+            </summary>
+        </member>
+        <member name="P:Commands.UpdateMenuCommand.Id">
+            <summary>
+            Primary key botao
+            </summary>
+        </member>
+        <member name="P:Commands.UpdateMenuCommand.description">
+            <summary>
+            Descrição botão
+            </summary>
+        </member>
+        <member name="P:Commands.UpdateMenuCommand.href">
+            <summary>
+            Link botão
             </summary>
         </member>
         <member name="M:GenerateData.#ctor(Microsoft.EntityFrameworkCore.ModelBuilder)">
@@ -109,12 +154,12 @@
             Retorna Dados Menu
             </summary>
         </member>
-        <member name="M:webApi.Controllers.MenuPrincipalController.Post(webApi.Models.ButtonsMenuModel)">
+        <member name="M:webApi.Controllers.MenuPrincipalController.Post(Commands.CreateMenuCommand)">
             <summary>
             Cadastra um Menu
             </summary>
         </member>
-        <member name="M:webApi.Controllers.MenuPrincipalController.Put(webApi.Models.ButtonsMenuModel)">
+        <member name="M:webApi.Controllers.MenuPrincipalController.Put(Commands.UpdateMenuCommand)">
             <summary>
             Atualiza um Menu
             </summary>
@@ -122,6 +167,11 @@
         <member name="M:webApi.Controllers.MenuPrincipalController.Delete(System.Int32)">
             <summary>
             Deleta um menu
+            </summary>
+        </member>
+        <member name="M:webApi.Controllers.MenuPrincipalController.getById(System.Int32)">
+            <summary>
+            Coleta um menu por ID
             </summary>
         </member>
         <member name="T:webApi.Controllers.WorkController">

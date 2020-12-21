@@ -1,28 +1,28 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Commands {
+namespace Commands{
     /// <summary>
-    /// Classe de atualização Usuario
+    /// Classe de Atualização Botão menu
     /// </summary>
-    public class UpdateLoginCommand {
-        
+    public class UpdateMenuCommand {
+
         /// <summary>
-        /// id usuario 
+        /// Primary key botao
         /// </summary>
         public int Id { get; set; }
 
         /// <summary>
-        /// Propriedade string senha usuario
+        /// Descrição botão
         /// </summary>
         [MaxLength(100)]
-        public string Senha { get; set; }
+         public string description { get; set; } 
 
         /// <summary>
-        /// Acesso usuario fk
+        /// Link botão
         /// </summary>
-        public int UsuarioAcessoId { get; set; }
+        [MaxLength(100)]
+        public string href { get; set; }
 
     }
-
 }

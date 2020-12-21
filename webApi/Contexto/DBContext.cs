@@ -8,9 +8,12 @@ namespace Contexto {
     public class ContextoDB: DbContext {
         private string connectionStrings = "";
 
+    
        public DbSet<ButtonsMenuModel> TabelaButtonsMenu {get; set;}
        public DbSet<UsuariosModel> TabelaUsuarios {get; set;}
        public DbSet<UsuarioAcesso> TabelaAcessos{ get; set; }
+       public DbSet<CatalogProjeto> TabelaCatalogProjeto { get; set; }
+       public DbSet<FotosProjeto> TabelaFotosProjeto { get; set; }
 
     public ContextoDB(IConfiguration configuration){
         //this.connectionStrings = configuration.GetSection("ConnectionStrings").Value;
@@ -39,8 +42,22 @@ namespace Contexto {
             .HasMany(r => r.LoginModel)
             .WithOne(r => r.UsuarioAcesso)
         );
+
+
+        // Configuration Catalog Projeto 
+        builder.Entity<CatalogProjeto>(entity =>
+        entity
+            .HasMany(r => r.ListaFotos)
+            .WithOne(r => r.projetoVinculado)
+          );
        
-        
+        //Configuration fotos Projeto
+        builder.Entity<FotosProjeto>(entity =>
+        entity
+            .HasOne(r => r.projetoVinculado)
+            .WithMany(r => r.ListaFotos)
+            .HasForeignKey(r => r.IdProjeto)
+        );
 
         GenerateData PrepareData = new GenerateData(builder);
     }

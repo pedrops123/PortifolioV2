@@ -5,6 +5,7 @@ using webApi.Models;
 using webApi.Repository;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Authorization;
+using Commands;
 
 namespace webApi.Controllers {
 
@@ -37,14 +38,14 @@ namespace webApi.Controllers {
         /// </summary>
         [HttpPost]
         [Authorize(Roles = "Adm")]
-        public RetornoGlobal<ButtonsMenuModel> Post([FromBody] ButtonsMenuModel parameter) => repository.PostMenu(parameter);
+        public RetornoGlobal<ButtonsMenuModel> Post([FromBody] CreateMenuCommand parameter) => repository.PostMenu(parameter);
 
         /// <summary>
         /// Atualiza um Menu
         /// </summary>
         [HttpPut]
         [Authorize(Roles = "Adm")]
-        public RetornoGlobal<ButtonsMenuModel> Put([FromBody] ButtonsMenuModel parameter) => repository.PutMenu(parameter);
+        public RetornoGlobal<ButtonsMenuModel> Put([FromBody] UpdateMenuCommand parameter) => repository.PutMenu(parameter);
 
         /// <summary>
         /// Deleta um menu
@@ -53,6 +54,13 @@ namespace webApi.Controllers {
         [Authorize(Roles = "Adm")]
         public RetornoGlobal<ButtonsMenuModel> Delete([FromQuery] int id) => repository.DeleteMenu(id);
 
+        /// <summary>
+        /// Coleta um menu por ID
+        /// </summary>
+        [HttpGet]
+        [Authorize(Roles = "Adm")]
+        [Route("getById")] 
+        public RetornoGlobal<ButtonsMenuModel> getById([FromQuery] int id) => repository.getByID(id);
 
 
 

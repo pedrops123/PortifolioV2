@@ -2,6 +2,9 @@ using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Commands{
+    /// <summary>
+    /// Classe de criação Usuario
+    /// </summary>
     public class CreateLoginCommand {
         
         /// <summary>
