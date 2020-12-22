@@ -79,6 +79,66 @@
             Link botão
             </summary>
         </member>
+        <member name="T:Commands.CreateCatalogProjeto">
+            <summary>
+            Classe de criação Projeto
+            </summary>
+        </member>
+        <member name="P:Commands.CreateCatalogProjeto.nome_projeto">
+            <summary>
+            Nome do projeto
+            </summary>
+        </member>
+        <member name="P:Commands.CreateCatalogProjeto.img_thumbnail">
+            <summary>
+            Imagem de inicio 
+            </summary>
+        </member>
+        <member name="P:Commands.CreateCatalogProjeto.descritivo_capa">
+            <summary>
+            Descricao card
+            </summary>
+        </member>
+        <member name="P:Commands.CreateCatalogProjeto.texto_projeto">
+            <summary>
+            Texto do projeto
+            </summary>
+        </member>
+        <member name="P:Commands.CreateCatalogProjeto.ListaFotos">
+            <summary>
+            Fotos do projeto 
+            </summary>
+        </member>
+        <member name="T:Commands.UpdateCatalogProjeto">
+            <summary>
+            Classe de atualização Projeto
+            </summary>
+        </member>
+        <member name="P:Commands.UpdateCatalogProjeto.Id">
+            <summary>
+            Id do registro
+            </summary>
+        </member>
+        <member name="P:Commands.UpdateCatalogProjeto.img_thumbnail">
+            <summary>
+            Imagem de inicio 
+            </summary>
+        </member>
+        <member name="P:Commands.UpdateCatalogProjeto.descritivo_capa">
+            <summary>
+            Descricao card
+            </summary>
+        </member>
+        <member name="P:Commands.UpdateCatalogProjeto.texto_projeto">
+            <summary>
+            Texto do projeto
+            </summary>
+        </member>
+        <member name="P:Commands.UpdateCatalogProjeto.ListaFotos">
+            <summary>
+            Fotos do projeto 
+            </summary>
+        </member>
         <member name="M:GenerateData.#ctor(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <summary>
             Popula todas as tabelas com os dados default
@@ -179,19 +239,39 @@
             Controller Meus Trabalhos
             </summary>
         </member>
-        <member name="M:webApi.Controllers.WorkController.#ctor">
+        <member name="M:webApi.Controllers.WorkController.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
             Construtor da classe 
             </summary>
         </member>
-        <member name="M:webApi.Controllers.WorkController.getDataPagination(webApi.Models.ParameterPagination)">
+        <member name="M:webApi.Controllers.WorkController.get">
             <summary>
-            Retorna Paginação dos trabalhos gerais cadastrados no sistema
+            Retorna lista de projetos
             </summary>
         </member>
-        <member name="M:webApi.Controllers.WorkController.getDetailProject(System.Int32)">
+        <member name="M:webApi.Controllers.WorkController.post(Commands.CreateCatalogProjeto)">
             <summary>
-            Retorna o detalhamento do projeto pelo id 
+            Cadastra um projeto
+            </summary>
+        </member>
+        <member name="M:webApi.Controllers.WorkController.put(Commands.UpdateCatalogProjeto)">
+            <summary>
+            Atualiza um projeto 
+            </summary>
+        </member>
+        <member name="M:webApi.Controllers.WorkController.delete(System.Int32)">
+            <summary>
+            Deleta um projeto
+            </summary>
+        </member>
+        <member name="M:webApi.Controllers.WorkController.GetById(System.Int32)">
+            <summary>
+            Coleta projeto por ID
+            </summary>
+        </member>
+        <member name="M:webApi.Controllers.WorkController.getDataPagination(webApi.Models.ParameterPagination)">
+            <summary>
+            Faz paginação de projetos
             </summary>
         </member>
         <member name="T:webApi.Models.ButtonsMenuModel">

@@ -20,7 +20,7 @@ namespace webApi.Models {
 
         public string texto_projeto { get; set; }
 
-        [JsonIgnore]
+        
         public virtual List<FotosProjeto> ListaFotos { get; set; } 
     }
 }

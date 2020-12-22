@@ -43,8 +43,8 @@ namespace webApi.Repository {
             RetornoGlobal<List<ButtonsMenuModel>> retorno = new RetornoGlobal<List<ButtonsMenuModel>>();
             try
             {
+                retorno.RetornoObjeto = contexto.TabelaButtonsMenu.ToList();
                 retorno.status = true;
-                retorno.RetornoObjeto = contexto.TabelaButtonsMenu.ToList();;
             }
             catch(Exception e){
                 retorno.status = false;

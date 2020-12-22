@@ -42,8 +42,8 @@ namespace webApi.Repository{
             RetornoGlobal<List<UsuariosModel>> listaUsuarios = new RetornoGlobal<List<UsuariosModel>>();
             try
             {
-                listaUsuarios.status = true;
                 listaUsuarios.RetornoObjeto = contexto.TabelaUsuarios.Include(r => r.UsuarioAcesso).ToList();
+                listaUsuarios.status = true;
             }
             catch(Exception e){
                 listaUsuarios.status = false;
