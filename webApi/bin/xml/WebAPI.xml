@@ -169,27 +169,27 @@
             Construtor da classe
             </summary>
         </member>
-        <member name="M:webApi.Controllers.LoginController.get">
+        <member name="M:webApi.Controllers.LoginController.Get">
             <summary>
             Coleta lista de usuarios
             </summary>
         </member>
-        <member name="M:webApi.Controllers.LoginController.getById(System.Int32)">
+        <member name="M:webApi.Controllers.LoginController.GetByID(System.Int32)">
             <summary>
             Pesquisa usuario por ID
             </summary>
         </member>
-        <member name="M:webApi.Controllers.LoginController.post(Commands.CreateLoginCommand)">
+        <member name="M:webApi.Controllers.LoginController.Post(Commands.CreateLoginCommand)">
             <summary>
             Cadastra um novo usuario
             </summary>
         </member>
-        <member name="M:webApi.Controllers.LoginController.put(Commands.UpdateLoginCommand)">
+        <member name="M:webApi.Controllers.LoginController.Put(Commands.UpdateLoginCommand)">
             <summary>
             Atualiza um usuario
             </summary>
         </member>
-        <member name="M:webApi.Controllers.LoginController.delete(System.Int32)">
+        <member name="M:webApi.Controllers.LoginController.Delete(System.Int32)">
             <summary>
             Deleta um usuario
             </summary>
@@ -214,6 +214,11 @@
             Retorna Dados Menu
             </summary>
         </member>
+        <member name="M:webApi.Controllers.MenuPrincipalController.GetByID(System.Int32)">
+            <summary>
+            Coleta um menu por ID
+            </summary>
+        </member>
         <member name="M:webApi.Controllers.MenuPrincipalController.Post(Commands.CreateMenuCommand)">
             <summary>
             Cadastra um Menu
@@ -227,11 +232,6 @@
         <member name="M:webApi.Controllers.MenuPrincipalController.Delete(System.Int32)">
             <summary>
             Deleta um menu
-            </summary>
-        </member>
-        <member name="M:webApi.Controllers.MenuPrincipalController.getById(System.Int32)">
-            <summary>
-            Coleta um menu por ID
             </summary>
         </member>
         <member name="T:webApi.Controllers.WorkController">
@@ -272,6 +272,36 @@
         <member name="M:webApi.Controllers.WorkController.getDataPagination(webApi.Models.ParameterPagination)">
             <summary>
             Faz paginação de projetos
+            </summary>
+        </member>
+        <member name="T:webApi.Interfaces.BaseInterface`3">
+            <summary>
+            Classe de interface base de rotas
+            </summary>
+        </member>
+        <member name="M:webApi.Interfaces.BaseInterface`3.Get">
+            <summary>
+            Coleta lista de registros 
+            </summary>
+        </member>
+        <member name="M:webApi.Interfaces.BaseInterface`3.GetByID(System.Int32)">
+            <summary>
+            Coleta registro por ID
+            </summary>
+        </member>
+        <member name="M:webApi.Interfaces.BaseInterface`3.Post(`1)">
+            <summary>
+            Cadastra Registro 
+            </summary>
+        </member>
+        <member name="M:webApi.Interfaces.BaseInterface`3.Put(`2)">
+            <summary>
+            Atualiza Registro
+            </summary>
+        </member>
+        <member name="M:webApi.Interfaces.BaseInterface`3.Delete(System.Int32)">
+            <summary>
+            Deleta Registro
             </summary>
         </member>
         <member name="T:webApi.Models.ButtonsMenuModel">
