@@ -244,29 +244,29 @@
             Construtor da classe 
             </summary>
         </member>
-        <member name="M:webApi.Controllers.WorkController.get">
+        <member name="M:webApi.Controllers.WorkController.Get">
             <summary>
             Retorna lista de projetos
             </summary>
         </member>
-        <member name="M:webApi.Controllers.WorkController.post(Commands.CreateCatalogProjeto)">
+        <member name="M:webApi.Controllers.WorkController.GetByID(System.Int32)">
+            <summary>
+            Coleta projeto por ID
+            </summary>
+        </member>
+        <member name="M:webApi.Controllers.WorkController.Post(Commands.CreateCatalogProjeto)">
             <summary>
             Cadastra um projeto
             </summary>
         </member>
-        <member name="M:webApi.Controllers.WorkController.put(Commands.UpdateCatalogProjeto)">
+        <member name="M:webApi.Controllers.WorkController.Put(Commands.UpdateCatalogProjeto)">
             <summary>
             Atualiza um projeto 
             </summary>
         </member>
-        <member name="M:webApi.Controllers.WorkController.delete(System.Int32)">
+        <member name="M:webApi.Controllers.WorkController.Delete(System.Int32)">
             <summary>
             Deleta um projeto
-            </summary>
-        </member>
-        <member name="M:webApi.Controllers.WorkController.GetById(System.Int32)">
-            <summary>
-            Coleta projeto por ID
             </summary>
         </member>
         <member name="M:webApi.Controllers.WorkController.getDataPagination(webApi.Models.ParameterPagination)">
