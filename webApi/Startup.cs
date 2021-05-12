@@ -6,6 +6,7 @@ using Contexto;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,12 +27,11 @@ namespace webApi
 
         public IConfiguration Configuration { get; }
 
-        
         public void ConfigureServices(IServiceCollection services)
         {
             // Configuracao de connection strings
-            services.AddDbContext<ContextoDB>(options => options.UseSqlServer(Configuration.GetConnectionString("ConexionDB")));
-
+            //services.AddDbContext<ContextoDB>(options => options.UseSqlServer(Configuration.GetConnectionString("ConexionDB")));
+            //services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
           services.AddCors(options => options.AddPolicy(name_cors,
           builder => {
               

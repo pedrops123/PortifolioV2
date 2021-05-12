@@ -14,7 +14,7 @@ namespace webApi.Repository {
       
         public MenuPrincipalRepository(IConfiguration configuration){
 
-            this.contexto = new ContextoDB(configuration);
+          this.contexto = new ContextoDB(configuration);
             /*
             this.listaRetorno = new List<ButtonsMenuModel>(){
                 new ButtonsMenuModel(){
