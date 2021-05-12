@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Portifolio_new\\webApi\\webApi.csproj": {}
+    "C:\\Users\\pvfurlan\\Desktop\\Teste\\webApi\\webApi.csproj": {}
   },
   "projects": {
-    "C:\\Portifolio_new\\webApi\\webApi.csproj": {
+    "C:\\Users\\pvfurlan\\Desktop\\Teste\\webApi\\webApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Portifolio_new\\webApi\\webApi.csproj",
+        "projectUniqueName": "C:\\Users\\pvfurlan\\Desktop\\Teste\\webApi\\webApi.csproj",
         "projectName": "webApi",
-        "projectPath": "C:\\Portifolio_new\\webApi\\webApi.csproj",
-        "packagesPath": "C:\\Users\\pedro.furlan\\.nuget\\packages\\",
-        "outputPath": "C:\\Portifolio_new\\webApi\\obj\\",
+        "projectPath": "C:\\Users\\pvfurlan\\Desktop\\Teste\\webApi\\webApi.csproj",
+        "packagesPath": "C:\\Users\\pvfurlan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pvfurlan\\Desktop\\Teste\\webApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\pedro.furlan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pvfurlan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "FluentValidation": {
               "target": "Package",
@@ -85,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300-preview.21180.15\\RuntimeIdentifierGraph.json"
         }
       }
     }
