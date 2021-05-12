@@ -22,7 +22,7 @@ namespace Contexto {
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
         // Usar chumbado por momento
-        optionsBuilder.UseSqlServer(@"Data Source=SPDECPD23\SQLEXPRESS;Initial Catalog=Portifolio;Integrated Security=True;Connect Timeout=30; Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        //optionsBuilder.UseSqlServer(@"Data Source=WLEBRSAO3-00066\SQLEXPRESS01;Initial Catalog=Portifolio;Integrated Security=True;Connect Timeout=30; Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
     }
 
    protected override void OnModelCreating(ModelBuilder builder){
