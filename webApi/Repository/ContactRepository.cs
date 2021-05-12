@@ -12,7 +12,7 @@ namespace webApi.Repository {
             
         }
         public ValidationContactModel sendEmail(){
-
+            // Comeco enviar email
         ValidationContactModel retorno = new ValidationContactModel();
             try
             {

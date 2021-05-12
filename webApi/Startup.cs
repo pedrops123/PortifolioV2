@@ -26,7 +26,6 @@ namespace webApi
 
         public IConfiguration Configuration { get; }
 
-        
         public void ConfigureServices(IServiceCollection services)
         {
             // Configuracao de connection strings
