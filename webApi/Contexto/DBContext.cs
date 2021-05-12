@@ -15,14 +15,15 @@ namespace Contexto {
        public DbSet<CatalogProjeto> TabelaCatalogProjeto { get; set; }
        public DbSet<FotosProjeto> TabelaFotosProjeto { get; set; }
 
+
     public ContextoDB(IConfiguration configuration){
-        //this.connectionStrings = configuration.GetSection("ConnectionStrings").Value;
+        this.connectionStrings = configuration.GetConnectionString("ConexionDB");
         this.Database.EnsureCreated();
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
         // Usar chumbado por momento
-        //optionsBuilder.UseSqlServer(@"Data Source=WLEBRSAO3-00066\SQLEXPRESS01;Initial Catalog=Portifolio;Integrated Security=True;Connect Timeout=30; Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        optionsBuilder.UseSqlServer(this.connectionStrings);
     }
 
    protected override void OnModelCreating(ModelBuilder builder){

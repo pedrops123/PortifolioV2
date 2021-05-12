@@ -14,7 +14,7 @@ namespace webApi.Repository{
     public class LoginRepository {
         private ContextoDB contexto;
         public LoginRepository(IConfiguration configuration){
-             this.contexto = new ContextoDB(configuration);
+           this.contexto = new ContextoDB(configuration);
         }
         public ValidationLogin validaLogin(LoginFormModel dadosUser){
             ValidationLogin retorno = new ValidationLogin();
