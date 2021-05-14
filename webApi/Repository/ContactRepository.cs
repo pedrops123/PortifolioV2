@@ -26,12 +26,14 @@ namespace webApi.Repository {
                     Credentials = new NetworkCredential(email,senha),
                     EnableSsl = true
                 };
-            
+
+                string mensagemEmail = $"Nova mensagem recebida ! \n \n Responder á : { parametro.email } \n \n Mensagem: { parametro.CorpoMensagem }";
+
                 smtpClient.Send(
                     new MailMessage(parametro.email ,
                      "pedro.furlan1304@hotmail.com" ,
                       "Mensagem Portifolio" ,
-                       parametro.CorpoMensagem 
+                       mensagemEmail
                        ));
 
                 retorno.enviado = true;

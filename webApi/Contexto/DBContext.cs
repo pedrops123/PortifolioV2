@@ -6,7 +6,7 @@ using webApi.Models;
 namespace Contexto {
 
     public class ContextoDB: DbContext {
-        private string connectionStrings = "";
+        private string connectionStrings;
 
     
        public DbSet<ButtonsMenuModel> TabelaButtonsMenu {get; set;}

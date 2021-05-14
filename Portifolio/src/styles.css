@@ -1,4 +1,117 @@
-/* You can add global styles to this file, and also import other style files */
+/* Estilos gerais do sistema
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+
+}
+
+ */
+
+
+ html,body {
+    margin:0;
+    height: 100%;
+  }
+  
+  div.app {
+      display: grid;
+      height: 100%;
+      grid-template-rows: 8vh 3vh 100fr 8vh;
+      grid-template-areas:"header"
+                          "bread" 
+                          "corpo" 
+                          "footer"
+  }
+  
+  .header {
+      grid-area: header;
+      background-color:black;
+      display: grid;
+      grid-template-columns: 70vw auto;
+      grid-template-rows: 8vh;
+  }
+  
+  .area_btns{
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      text-align: center;
+  }
+  .bread_crumb{
+      grid-area: bread;
+      background-color:#cac9c9;
+  }
+  
+  
+  .area_logo{
+     
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  .corpo { 
+      grid-area: corpo;
+      background-color:white;
+  }
+  
+  .footer {
+      grid-area: footer;
+      color:white;
+      font-family: cursive;
+      padding: 2px;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      background-color:black;
+  }
+  
+  .link_menu {
+      color:white;
+      align-self: center;
+      cursor: pointer;
+      font-family: cursive;
+      transition: 0.4s;
+      font-size: 10pt;
+      margin-right: 10%;
+      outline: none;
+      user-select: none;
+     
+  }
+  
+  .link_menu:hover {
+      font-size: 11pt;
+      color: yellow;
+      transition: 0.4s;
+      outline: none;
+      user-select: none;
+  }
+  
+  .foto_perfil{
+      background-color: blue;
+      border-radius: 38px;
+      width: 50px;
+      height: 50px;
+  }
+  
+  @media (max-width:450px){
+  
+  
+      .footer{
+          font-size:7pt;
+      }
+  
+      .link_menu{
+          font-size: 6pt;
+      }
+  
+      .link_menu:hover{
+          font-size:8pt;
+      }
+  
+      .foto_perfil{
+          width: 40px;
+          height: 40px;
+      }
+  }
