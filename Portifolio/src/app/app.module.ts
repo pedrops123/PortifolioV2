@@ -37,8 +37,8 @@ import { CarrouselWorkModule } from './components/carrousel-work/carrousel-work.
 import { LoadingComponent } from './components/loading/loading.component';
 import { DetailWorkService } from './services/detail-work/detail-work.service';
 import { LoadingModule } from './components/loading/loading.module';
-import { FormContactComponent } from './pages/contact/form-contact/form-contact.component';
 
+import {ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,12 +52,12 @@ import { FormContactComponent } from './pages/contact/form-contact/form-contact.
     CardLayoutComponent,
     FooterComponent,
     DetailWorkComponent,
-    FormContactComponent,
     
   
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     rotaApp,

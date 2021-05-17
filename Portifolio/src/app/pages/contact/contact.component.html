@@ -1,10 +1,20 @@
 <div id="form-contact">
-    <div class="header">
+    <div  class="header">
         <br/>
         Gostou do que viu ? <br/><br/>
         Entre em contato para dar um feedback ou fazer um orçamento , sua opinião vale ouro ;)
     </div>
     <div>
-        
+        <form [formGroup]="_FormContato">
+            <div>
+                <label for="email_cmp"> Email</label>
+                <input id="email_cmp" formControlName="email" type="email" placeholder="Ex: teste_teste@hotmail.com"/>    
+            </div>
+            <div>
+                <label for="comment_area"> Comentario</label><br/>
+                <textarea id="comment_area" formControlName="mensagem"  placeholder="Seu comentario"></textarea>
+            </div>
+           
+        </form>
     </div>
 </div>
