@@ -1,3 +1,21 @@
+<div class="header">
+  <div class="area_btns">
+    <a *ngFor="let button of dadosMenu"  [routerLink]="button.href" class="link_menu">{{ button.description }}</a>
+  </div>
+  <div class="area_logo">
+      <div class="foto_perfil"> </div>
+  </div>
+  
+</div>
+<div class="bread_crumb">
+  <a *ngIf="hasRoute('work')"><a matTooltip="Inicio"  routerLink="/inicio">&nbsp;&nbsp; Inicio / </a>Meus Trabalhos</a>
+  <a *ngIf="hasRoute('contact')"><a matTooltip="Inicio" routerLink="/inicio">&nbsp;&nbsp; Inicio / </a>Contato</a>
+  <a *ngIf="hasRoute('detail')"> 
+    <a matTooltip="Inicio" routerLink="/inicio">&nbsp;&nbsp; Inicio /  </a>  
+    <a matTooltip="Meus Trabalhos" routerLink="/work">&nbsp; Meus Trabalhos  / </a>  
+    <a>&nbsp;&nbsp; Detalhamento Trabalho {{ getIdDescription() }} </a>  
+   </a>
+</div>
 
 
 <!--

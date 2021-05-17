@@ -1,65 +1,78 @@
-.fundo-toolbar {
-    display: flex;
-}
 
-.toolbar {
+  .header {
+    grid-area: header;
     background-color:black;
+    display: grid;
+    grid-template-columns: 70vw auto;
+    grid-template-rows: 8vh;
 }
 
-#btn-side-menu {
-    display: none;
-}
-
-div .mat-menu-panel {
-    display: none !important;
-}
-
-#breadCrumb {
+.area_btns{
     display: flex;
-    background-color: #D1D1D1;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
 }
-
-.description-breadCrumb a:link {
+.bread_crumb{
+    grid-area: bread;
     text-decoration: none;
-    color: darkblue;
+    background-color:#cac9c9;
 }
 
-.description-breadCrumb a:visited {
+.bread_crumb a {
     text-decoration: none;
-    color: darkblue;
 }
 
-#btnMenu {
-    margin:0px 0px 0px 23px;
+
+.area_logo{
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.link_menu {
     color:white;
-    background-color:black ;
-    transition: 0.8s;
+    align-self: center;
+    cursor: pointer;
+    font-family: cursive;
+    transition: 0.4s;
+    font-size: 10pt;
+    margin-right: 10%;
+    outline: none;
+    text-decoration: none;
+    user-select: none;
+   
 }
 
-#btnMenu:hover {
-    background-color:gray;
-    transition: 0.8s;
+.link_menu:hover {
+    font-size: 11pt;
+    color: yellow;
+    transition: 0.4s;
+    outline: none;
+    user-select: none;
 }
 
-.clicked {
-    color:gold !important;
+.foto_perfil{
+    background-color: blue;
+    border-radius: 38px;
+    width: 50px;
+    height: 50px;
 }
 
-@media screen and (max-width:480px){
-
-    #btnMenu {
-        display: none;
+@media (max-width:450px){
+  
+    .link_menu{
+        font-size: 6pt;
     }
 
-    #btn-side-menu {
-        display: block;
-        color:white;
+    .link_menu:hover{
+        font-size:8pt;
     }
 
-
-    
-    div .mat-menu-panel  {
-        display: block !important;
+    .foto_perfil{
+        width: 40px;
+        height: 40px;
     }
-    
 }

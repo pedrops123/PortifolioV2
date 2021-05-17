@@ -1,7 +1,35 @@
-.center-component {
-    text-align: -webkit-center;
-    background-color: #E7E7E7;
+#form-contact
+{
+    width: 80%;
+    height: 351px;
+    background-color: lightgray;
+    border-radius: 30px 0px 30px 0px;
+    box-shadow: black 3px 5px 4px 1px;
+    transform: translate(10%, 16%);
+    display: grid;
+    grid-template-rows: 1fr 6fr;
+}
+
+#sbmButton {
+    background-color: black;
+    color:white;
+    margin: 0px 0px 12px 0px;
+}
+
+.title {
+    font-size: 26px;
+    margin: 0px 0px 0px 0px;
+    font-family: fantasy;
+}
+
+.title-content{
+    display: -webkit-inline-box;
+    margin-top: 33px;
+}
+
+#form-contact .header{
+    text-align: center;
+    justify-content: center;
     display: flex;
-    height: 100%;
-    position: relative;
+    font-family: cursive;
 }

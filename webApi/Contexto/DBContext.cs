@@ -6,7 +6,7 @@ using webApi.Models;
 namespace Contexto {
 
     public class ContextoDB: DbContext {
-        private string connectionStrings;
+        private string _connectionStrings;
 
     
        public DbSet<ButtonsMenuModel> TabelaButtonsMenu {get; set;}
@@ -17,13 +17,13 @@ namespace Contexto {
 
 
     public ContextoDB(IConfiguration configuration){
-        this.connectionStrings = configuration.GetConnectionString("ConexionDB");
+        this._connectionStrings = configuration.GetConnectionString("ConexionDB");
         this.Database.EnsureCreated();
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
         // Usar chumbado por momento
-        optionsBuilder.UseSqlServer(this.connectionStrings);
+        optionsBuilder.UseSqlServer(this._connectionStrings);
     }
 
    protected override void OnModelCreating(ModelBuilder builder){
