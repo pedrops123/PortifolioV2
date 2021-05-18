@@ -1,7 +1,7 @@
 #form-contact
 {
     width: 80%;
-    height: 351px;
+    height: 63%;
     background-color: lightgray;
     border-radius: 30px 0px 30px 0px;
     box-shadow: black 3px 5px 4px 1px;
@@ -32,4 +32,52 @@
     justify-content: center;
     display: flex;
     font-family: cursive;
+}
+
+#area_email{
+    display: flex;
+    justify-content: center;
+}
+
+
+#area_comment{
+    display: grid;
+    justify-content: center;
+}
+
+textarea {
+    resize: none;
+    margin: 0px; 
+    width: 547px;
+    height: 103px;
+    margin-bottom: 10px;
+}
+
+#area_btn_sbmt{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+input[type="email"].form-control {
+    width:53% !important;
+
+}
+
+@media(max-width:700px){
+    textarea {
+        resize: none;
+        margin: 0px; 
+        width: 400px;
+        height: 103px;
+    }    
+}
+
+@media(max-width:500px){
+    textarea {
+        resize: none;
+        margin: 0px; 
+        width: 199px;
+        height: 75px;
+    }    
 }
