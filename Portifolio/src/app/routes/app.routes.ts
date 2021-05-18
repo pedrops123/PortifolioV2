@@ -24,7 +24,6 @@ const APP_ROTAS : Routes = [
     },
     {
         path:'',
-        component:SiteLayoutComponent,
         children:[
             {
                 path:'inicio',

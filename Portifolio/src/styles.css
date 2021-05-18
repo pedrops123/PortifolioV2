@@ -1,4 +1,69 @@
-/* You can add global styles to this file, and also import other style files */
+/* Estilos gerais do sistema
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+
+}
+
+ */
+
+
+ html,body {
+    margin:0;
+    height: 100%;
+  }
+  
+  div.app {
+      display: grid;
+      height: 100%;
+      grid-template-rows: 8vh 4vh 100fr 5vh;
+      grid-template-areas:"header"
+                          "bread" 
+                          "corpo" 
+                          "footer"
+  }
+  
+  .corpo { 
+      grid-area: corpo;
+      background-color:white;
+  }
+  
+  .footer {
+      grid-area: footer;
+      color:white;
+      font-family: cursive;
+      padding: 2px;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      background-color:black;
+  }
+
+
+  
+  
+  
+
+  
+  @media (max-width:450px){
+  
+  
+      .footer{
+          font-size:7pt;
+      }
+  
+      .link_menu{
+          font-size: 6pt;
+      }
+  
+      .link_menu:hover{
+          font-size:8pt;
+      }
+  
+      .foto_perfil{
+          width: 40px;
+          height: 40px;
+      }
+  }

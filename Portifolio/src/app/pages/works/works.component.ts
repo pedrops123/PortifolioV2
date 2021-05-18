@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PageEvent } from '@angular/material/paginator';
+//import { PageEvent } from '@angular/material/paginator';
 import { DataCardComponent } from 'src/app/models/DataCardComponent';
 import { PaginationCardsParameter } from 'src/app/models/PaginationCardsParameter';
 import { WorkServiceService } from 'src/app/services/works/work-service.service';
@@ -23,20 +23,20 @@ export class WorksComponent implements OnInit {
   enableContent:boolean;
 
   constructor(private serviceWorks:WorkServiceService) {
-
+/* 
       let eventInitial:PageEvent = {
         length:this.totalLength,
         pageSize:this.pageSize,
         pageIndex:0
       }
-    
-    this.getDataPagination(eventInitial);
+   */ 
+   // this.getDataPagination(eventInitial);
    }
 
   ngOnInit(): void {
   }
-
-  getDataPagination(event?:PageEvent){
+/* x
+  getDataPagination(){
 
     this.enableLoading = true;
     this.enableContent = false; 
@@ -76,5 +76,5 @@ export class WorksComponent implements OnInit {
     console.log(this.cards);
     //this.cards = this.cards.slice((page_number - 1) * page_size, page_number * page_size);
   }
-
+*/
 }
