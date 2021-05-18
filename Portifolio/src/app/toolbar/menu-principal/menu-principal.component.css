@@ -14,9 +14,11 @@
     text-align: center;
 }
 .bread_crumb{
-    grid-area: bread;
+    grid-area: bread;    
     text-decoration: none;
+    display: flex;
     background-color:#cac9c9;
+    height: 30px;
 }
 
 .bread_crumb a {
@@ -46,6 +48,15 @@
    
 }
 
+.link_menu.active {
+    font-size: 11pt;
+    color: yellow;
+    transition: 0.4s;
+    outline: none;
+    user-select: none;
+}
+
+
 .link_menu:hover {
     font-size: 11pt;
     color: yellow;
@@ -62,16 +73,25 @@
 }
 
 @media (max-width:450px){
-  
-    .link_menu{
+    
+
+
+    .link_menu , .bread_crumb
+    {
         font-size: 6pt;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 20px;
     }
 
-    .link_menu:hover{
+    .link_menu:hover
+    {
         font-size:8pt;
     }
 
-    .foto_perfil{
+    .foto_perfil
+    {
         width: 40px;
         height: 40px;
     }
