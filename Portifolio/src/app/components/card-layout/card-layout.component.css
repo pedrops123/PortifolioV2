@@ -1,32 +1,33 @@
-.card-base
-{
-    width: 285px;
-    margin:26px 0px 26px 98px;
-    transition: 0.9s;
-}
-
-.card-base:hover {
-    width: 293px;
-    transition: 0.9s;
+.card-custom-work-presentation {
+    height: 327px;
+    background-color:rgb(247 247 247);
+    display: grid;
+    transition :0.5s;
+    grid-template-rows: auto auto auto;
 }
 
 
-
-@media screen and (max-width:480px){
-    .card-base
-    {
-        width: 216px;
-        margin:26px 0px 26px 61px;
-        transition: 0.9s;
-    }
+.card-custom-work-presentation:hover {
+    box-shadow: 3px 4px 10px 1px black;
+    transition :0.5s;
 }
 
-@media screen and (max-width:280px){
-    .card-base
-    {
-        width: 129px;
-        margin:26px 0px 26px 61px;
-        transition: 0.9s;
-    }
+.bottom-card{
+    background-color:rgb(234 234 234);
+    display: flex;
+    justify-content: center;
 }
 
+.bottom-card > button{
+    width: 90px;
+    height: 39px;
+    align-self: center;
+}
+
+.descritivo-card{
+    text-align: center;
+}
+
+.img_card > img{
+    max-width: 100%;
+}
