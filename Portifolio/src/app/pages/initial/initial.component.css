@@ -1,0 +1,79 @@
+.grid-fundo-inicial 
+{
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: 13vh auto 23vh;
+    /*position: relative;*/
+
+}
+
+ img 
+{
+    box-shadow: 6px 11px 25px 2px black;
+    border-radius: 100px;
+    margin-bottom: -101px;
+    z-index: 1;
+    margin: -174px 0px 1px 0px;
+}
+
+.painel-boas-vindas {
+    background-color: #cac9c9;
+    height: auto;
+    border-radius: 28px;
+    z-index: 0;
+    position: fixed;
+    border: 9px solid gray;
+    padding: 46px;
+    width: 517px;
+    height: 209px;
+    margin: 0px 0px 0px -157px;
+}
+    
+
+
+.area-boas-vindas{
+    display: flex;
+}
+
+
+@media(max-width:700px){
+     img {
+        width: 138px;
+        height: 138px;
+        margin-bottom: -101px;
+    }
+
+    .painel-boas-vindas {
+        width: 460px;
+        height: 199px;
+        margin: -70px 0px 0px -154px;
+       
+    }
+    
+}
+@media(max-width:500px){
+
+    img {
+        width: 138px;
+        height: 138px;
+        margin-bottom: -101px;
+    }
+
+    .painel-boas-vindas {
+        width: 379px;
+        height: 199px;
+        margin: -70px 0px 0px -116px;
+       
+    }
+
+}
+
+@media(max-width:400px){
+    .painel-boas-vindas {
+        width: 344px;
+        height: 146px;
+        margin: -56px 0px 0px -105px;
+    }   
+}
