@@ -1,6 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using webApi.Models;
 using webApi.Repository;
 
@@ -17,8 +18,8 @@ namespace webApi.Controllers
         /// <summary>
         /// Construtor da classe Meu Contato
         /// </summary>
-        public ContactController(){
-            repository = new ContactRepository();
+        public ContactController(IConfiguration configuration){
+            repository = new ContactRepository(configuration);
         }
 
         /// <summary>
@@ -28,8 +29,8 @@ namespace webApi.Controllers
         [HttpPost]
         [AllowAnonymous]
         [Route("sendMail")]
-        public ValidationContactModel SendEmail(){
-            return repository.sendEmail();
+        public ValidationContactModel SendEmail([FromBody] ParameterSendEmail parametro){
+            return repository.sendEmail(parametro);
         }
 
 

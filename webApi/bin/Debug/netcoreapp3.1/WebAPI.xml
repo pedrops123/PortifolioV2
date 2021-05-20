@@ -149,12 +149,12 @@
             Controller Meu Contato
             </summary>
         </member>
-        <member name="M:webApi.Controllers.ContactController.#ctor">
+        <member name="M:webApi.Controllers.ContactController.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
             Construtor da classe Meu Contato
             </summary>
         </member>
-        <member name="M:webApi.Controllers.ContactController.SendEmail">
+        <member name="M:webApi.Controllers.ContactController.SendEmail(webApi.Models.ParameterSendEmail)">
             <summary>
             Metodo de enviar e-mail
             </summary>
@@ -402,6 +402,21 @@
         <member name="P:webApi.Models.ParameterPagination.take">
             <summary>
             Coleta uma certa quantidade de dados
+            </summary>
+        </member>
+        <member name="T:webApi.Models.ParameterSendEmail">
+            <summary>
+            Parametro  envio de mesnsagem
+            </summary>
+        </member>
+        <member name="P:webApi.Models.ParameterSendEmail.email">
+            <summary>
+            Propriedade email usuario contato
+            </summary>
+        </member>
+        <member name="P:webApi.Models.ParameterSendEmail.CorpoMensagem">
+            <summary>
+            Propriedade corpo da mensagem 
             </summary>
         </member>
         <member name="T:webApi.Models.UsuarioAcesso">

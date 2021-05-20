@@ -1,7 +1,120 @@
-.center-component {
-    text-align: -webkit-center;
-    background-color: #E7E7E7;
-    display: flex;
+.grid-fundo-contact{
+    width: 100%;
     height: 100%;
+    /* flex: 1; */
+    display: flex;
     position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+#form-contact
+{
+    width: 80%;
+    height: 440px;
+    background-color: lightgray;
+    border-radius: 30px 0px 30px 0px;
+    box-shadow: black 3px 5px 4px 1px;
+    display: grid;
+    grid-template-rows: 1fr 6fr;
+}
+
+#sbmButton {
+    background-color: black;
+    color:white;
+    margin: 0px 0px 12px 0px;
+}
+
+.title {
+    font-size: 26px;
+    margin: 0px 0px 0px 0px;
+    font-family: fantasy;
+}
+
+.title-content{
+    display: -webkit-inline-box;
+    margin-top: 33px;
+}
+
+#form-contact .header{
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    font-family: cursive;
+}
+
+#area_email{
+    display: grid;
+    justify-content: center;
+}
+
+
+#area_comment{
+    display: grid;
+    justify-content: center;
+}
+
+textarea {
+    resize: none;
+    margin: 0px; 
+    width: 547px;
+    height: 103px;
+    margin-bottom: 10px;
+}
+
+#area_btn_sbmt{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    padding: 11px;
+}
+
+input[type="email"].form-control {
+    width: 400px;
+
+}
+
+@media(max-width:700px){
+    textarea {
+        resize: none;
+        margin: 0px; 
+        width: 400px;
+        height: 103px;
+    }    
+}
+
+@media(max-width:500px){
+    
+    #form-contact div.header
+    {
+        font-size: 6pt;
+    }
+
+    textarea {
+        resize: none;
+        margin: 0px; 
+        width: 199px;
+        height: 75px;
+    }    
+
+    input[type="email"].form-control {
+        width: 199px;
+    
+    }
+
+
+    #form-contact
+    {
+        width: 83%;
+        height: 372px;
+        background-color: lightgray;
+        border-radius: 30px 0px 30px 0px;
+        box-shadow: black 3px 5px 4px 1px;
+        display: grid;
+        grid-template-rows: 1fr 6fr;
+    }
+
+    #area_comment{
+        margin-bottom: 20px;
+    }
 }

@@ -1,23 +1,50 @@
-.fundo-card {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    background-color: #E7E7E7;
-    
+.pagination-bottom{
+    display:grid;
+    grid-template-columns: auto auto;
 }
 
-.div-paginator{
-    display: flex;
+.container-works{
+    display: grid;
+    position: relative;
+    height: 100%; 
+    grid-template-rows: 12fr 1fr;
+}
+
+.custom-paginator {
+    
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #cac9c9;
+
+}
+
+.custom-paginator ul{
+    height: 100%;
+}
+
+.display-trabalhos-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,216px);
+    grid-gap: 20px;
+    margin: 23px;
+}
+
+.custom-paginator > .pagination-grid > .pagination.pagination-sm {
+    margin: 6px 0px 6px 8px;
 }
 
 
-@media screen and (max-width:480px){
+.pagination-grid 
+{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
 
-    .fundo-card {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        background-color: #E7E7E7;
-    }
-    
+.description-paginator 
+{
+    align-items: center;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 8px;
 }

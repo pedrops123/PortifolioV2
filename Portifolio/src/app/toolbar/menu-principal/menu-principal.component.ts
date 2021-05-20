@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLinkActive, RouterOutlet, ActivatedRoute } from '@angular/router';
 import { ButtonsMenu } from 'src/app/models/ButtonsMenu';
+import { RetornoGlobal } from 'src/app/models/RetornoGlobal';
 import { MenuServiceService } from 'src/app/services/menu/menu-service.service';
 
 
@@ -17,7 +18,7 @@ export class MenuPrincipalComponent implements OnInit {
   constructor(private router:Router , private routerActive:ActivatedRoute,  private serviceMenu:MenuServiceService) {
    
     serviceMenu.getMenuInicial().subscribe(
-        Response =>{ this.dadosMenu = Response; }  , 
+        Response =>{ this.dadosMenu = Response.retornoObjeto; console.log(Response.retornoObjeto)}  , 
         error => console.log('Ocorreu um erro na coleta dos dados ' + error.message) 
       );
    }
