@@ -33,8 +33,14 @@
     color:white;
     font-family: cursive;
     user-select: none;
+    opacity: 1;
+    transition: 0.9s;
 }
 
+.area_logo.hide {
+    opacity: 0;
+    transition: 0.9s;
+}
 
 .link_menu {
     color:white;

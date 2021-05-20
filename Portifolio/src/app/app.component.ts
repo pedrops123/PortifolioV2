@@ -19,7 +19,7 @@ export class AppComponent {
   }
 
   scrollToTop(){
-    var elementoDOM = document.getElementById('tb-menu');
+    var elementoDOM = document.getElementById('topo');
     elementoDOM.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
   }
 
