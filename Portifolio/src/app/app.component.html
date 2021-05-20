@@ -2,6 +2,7 @@
   <menu-principal></menu-principal>
   <div class="corpo">
     <router-outlet></router-outlet>
+    <button (click)="scrollToTop()" *ngIf="this.buttonVisible" class="btn-up"> Subir </button>
   </div>
   <div class="footer">
      <footerApp></footerApp>
