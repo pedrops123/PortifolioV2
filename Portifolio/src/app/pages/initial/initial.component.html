@@ -2,14 +2,15 @@
     <div></div>
     <div class="area-boas-vindas">
         <img class="img-foto" src="../../../assets/foto_perfil/foto_perfil.jpg">
-        <img class="base-logo-stack img_angular" src="../../../assets/stacks/angular.png">
-        <img class="base-logo-stack img_dotnet" src="../../../assets/stacks/dotnet.png">
-        <img class="base-logo-stack img_html" src="../../../assets/stacks/html5.png">
-        <img class="base-logo-stack img_css" src="../../../assets/stacks/css3.png">
-        <div class="painel-boas-vindas">
-            Ola Seja bem vindo ao meu portifólio ! <br/><br/>
-            Desenvolvedor web , paulista , 25 anos , graduado 
-            em Analise e desenvolvimento de sistemas , e apaixonado por tecnologia. 
+            <div class="grp-stack">
+                <img id="img-angular" class="base-logo-stack img_angular" src="../../../assets/stacks/angular.png">
+                <tooltip-stack-component></tooltip-stack-component>
+            </div>
+        <img id="img-dotnet" class="base-logo-stack img_dotnet" src="../../../assets/stacks/dotnet.png">
+        <img id="img-html" class="base-logo-stack img_html" src="../../../assets/stacks/html5.png">
+        <img id="img-css" class="base-logo-stack img_css" src="../../../assets/stacks/css3.png">
+        <div  [translate]="'telainicial.mensagem-inicial'" class="painel-boas-vindas">
+   
         </div>
     </div>
     <br/><br/><br/><br/><br/><br/>

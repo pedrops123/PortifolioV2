@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-initial',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InitialComponent implements OnInit {
 
-  constructor() { }
+  constructor(component:AppComponent) {
+      component.setTitle('Pagina Inicial');
+   }
 
   ngOnInit(): void {
   }

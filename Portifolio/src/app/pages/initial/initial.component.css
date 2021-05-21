@@ -43,12 +43,38 @@
     width: 112px;
     height: 112px;
     position: absolute;
-    box-shadow: 5px 5px 9px 1px black;
     border-radius: 100px;
     transition: 0.9s;
-
 }
 
+.base-logo-stack:hover {
+    width: 116px;
+    height: 116px;
+    transition: 0.9s;
+    position: absolute;
+    border-radius: 100px;
+    transition: 0.9s;
+}
+
+#img-angular.base-logo-stack:hover {
+    box-shadow: 5px 5px 9px 1px red;
+}
+
+#img-dotnet.base-logo-stack:hover {
+
+    box-shadow: 5px 5px 9px 1px #9b4f96;
+}
+
+#img-html.base-logo-stack:hover {
+    box-shadow: 5px 5px 9px 1px #f16524;
+}
+
+#img-css.base-logo-stack:hover {
+    box-shadow: 5px 5px 9px 1px #339bff;
+}
+
+
+/*
 .base-logo-stack:hover{
     width: 116px;
     height: 116px;
@@ -57,8 +83,7 @@
     border-radius: 100px;
     transition: 0.9s;
 }
-
-
+*/
 
 .img_angular {
     margin: -103px 0px 0px -17px;
@@ -82,14 +107,15 @@
 
 
 
-@media(max-width:700px){
+@media screen and (max-width:700px) and (orientation:portrait){
+    
     .img_dotnet {
         margin: -167px 0px 0px 224px;
         z-index: 1;
     }
 
     .img_css {
-        margin: 231px 0px 0px 225px;
+        margin: 171px 0px 0px 225px;
         z-index: 1;
     }
 
@@ -124,10 +150,12 @@
         margin: -70px 0px 0px -154px;
        
     }
+
+    
     
 }
 
-@media(max-width:500px){
+@media screen and (max-width:500px)and (orientation:portrait){
 
     .base-logo-stack{
         width: 90px;
@@ -152,7 +180,7 @@
     }
 
     .img_html{
-        margin: 196px 0px 0px -138px;
+        margin: 99px  0px 0px -138px;
         z-index: 1;
     }
 
@@ -178,7 +206,7 @@
 
 }
 
-@media(max-width:400px){
+@media screen and (max-width:400px)and (orientation:portrait){
 
     .base-logo-stack{
         width: 61px;
@@ -219,8 +247,7 @@
 
 }
 
-
-@media(max-width:350px){
+@media screen and (max-width:350px)and (orientation:portrait){
     .img_dotnet {
         margin: -82px 0px 0px 94px;
         z-index: 1;

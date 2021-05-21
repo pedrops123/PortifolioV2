@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SiteLayoutComponent } from './site-layout.component';
+import { TooltipStackComponent } from './tooltip-stack.component';
 
-describe('SiteLayoutComponent', () => {
-  let component: SiteLayoutComponent;
-  let fixture: ComponentFixture<SiteLayoutComponent>;
+describe('TooltipStackComponent', () => {
+  let component: TooltipStackComponent;
+  let fixture: ComponentFixture<TooltipStackComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SiteLayoutComponent ]
+      declarations: [ TooltipStackComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SiteLayoutComponent);
+    fixture = TestBed.createComponent(TooltipStackComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
