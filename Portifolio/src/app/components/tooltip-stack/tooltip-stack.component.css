@@ -1,17 +1,20 @@
+
+
 .tooltip-stack {
     position: absolute;
     background-color: darkgray;
     border-radius: 9px;
     padding: 9px;
+    z-index: 2;
 }
 
-
-.arrow-left {
+.arrow-down {
     width: 0;
     height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-right: 10px solid darkgray;
-    margin: 10px 0px 0px -9px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid darkgray;
+    margin: 38px 0px 0px 30px;
     position: absolute;
+    z-index: 2;
   }

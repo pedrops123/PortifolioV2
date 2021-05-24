@@ -1,6 +1,6 @@
 {
     "telainicial":{
-        "mensagem-inicial":"Isto é um teste"
+        "mensagem-inicial":"Isto é um teste <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>"
     },
     "telaTrabalhos":{
         "description-bottom-btn":"Visualizar Projeto"

@@ -1,16 +1,36 @@
 <div class="grid-fundo-inicial">
     <div></div>
     <div class="area-boas-vindas">
-        <img class="img-foto" src="../../../assets/foto_perfil/foto_perfil.jpg">
-            <div class="grp-stack">
-                <img id="img-angular" class="base-logo-stack img_angular" src="../../../assets/stacks/angular.png">
-                <tooltip-stack-component></tooltip-stack-component>
+        <div id="area-foto">
+            <div *ngFor="let stack of stackArray" class="flex-stack">
+                <tooltip-stack-component [hover]="stack.active"></tooltip-stack-component>
+                <img [id]="stack.id" [class]="stack.class" [src]="stack.fotoStack">
             </div>
-        <img id="img-dotnet" class="base-logo-stack img_dotnet" src="../../../assets/stacks/dotnet.png">
-        <img id="img-html" class="base-logo-stack img_html" src="../../../assets/stacks/html5.png">
-        <img id="img-css" class="base-logo-stack img_css" src="../../../assets/stacks/css3.png">
-        <div  [translate]="'telainicial.mensagem-inicial'" class="painel-boas-vindas">
-   
+            <!--
+            <div class="flex-stack">
+                <tooltip-stack-component [hover]="true"></tooltip-stack-component>
+                <img id="img-angular" class="base-logo-stack img_angular stack-bottom" src="../../../assets/stacks/angular.png">
+            </div>
+            <div class="flex-stack">
+                <tooltip-stack-component></tooltip-stack-component>
+                <img id="img-dotnet" class="base-logo-stack img_dotnet stack-up" src="../../../assets/stacks/dotnet.png">
+            </div>
+            <div class="flex-stack">
+                <img class="img-foto" src="../../../assets/foto_perfil/foto_perfil.jpg">
+            </div>
+            <div class="flex-stack">
+                <tooltip-stack-component></tooltip-stack-component>
+                <img id="img-html" class="base-logo-stack img_html stack-up" src="../../../assets/stacks/html5.png">
+            </div>
+            <div class="flex-stack">
+                <tooltip-stack-component></tooltip-stack-component>
+                <img id="img-css" class="base-logo-stack img_css stack-bottom" src="../../../assets/stacks/css3.png">
+            </div>
+            -->
+           
+        </div>
+        <div id="area-content">
+            <div  [innerHTML]="'telainicial.mensagem-inicial' | translate" class="painel-boas-vindas"></div>
         </div>
     </div>
     <br/><br/><br/><br/><br/><br/>
