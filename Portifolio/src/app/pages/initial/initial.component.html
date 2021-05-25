@@ -1,10 +1,13 @@
 <div class="grid-fundo-inicial">
-    <div></div>
+    <div class="area-tooltip">
+        <div *ngFor="let tips of stackArray">
+            <tooltip-stack-component *ngIf="tips.tooltip" [TextoTooltip]="tips.descriptionTooltip" [hover]="tips.active"></tooltip-stack-component>
+        </div>
+    </div>
     <div class="area-boas-vindas">
         <div id="area-foto">
             <div *ngFor="let stack of stackArray" class="flex-stack">
-                <tooltip-stack-component [hover]="stack.active"></tooltip-stack-component>
-                <img [id]="stack.id" [class]="stack.class" [src]="stack.fotoStack">
+                <img (mouseover)="stack.active = true" (mouseout)="stack.active = false" [id]="stack.id" [class]="stack.class" [src]="stack.fotoStack">
             </div>
             <!--
             <div class="flex-stack">

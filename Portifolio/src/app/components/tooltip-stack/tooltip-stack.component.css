@@ -1,11 +1,25 @@
+.main-tooltip{
+    display: inline-grid;
+    grid-template-rows: auto auto;
+    position: absolute;
+    justify-items: center;
+    top: 110px;
+}
 
+.main-tooltip.hide {
+    display: none;
+}
 
 .tooltip-stack {
-    position: absolute;
+   
     background-color: darkgray;
     border-radius: 9px;
     padding: 9px;
     z-index: 2;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
 }
 
 .arrow-down {
@@ -14,7 +28,32 @@
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
     border-top: 20px solid darkgray;
-    margin: 38px 0px 0px 30px;
-    position: absolute;
     z-index: 2;
   }
+
+
+
+@media screen and (max-width:700px) and (orientation:portrait){
+
+    .main-tooltip{
+        font-size: 7pt;
+        top: 110px;
+    }
+
+
+}
+
+@media screen and (max-width:519px)and (orientation:portrait){
+
+    
+    
+}
+
+@media screen and (max-width:400px)and (orientation:portrait){
+    
+}
+
+@media screen and (max-width:325px)and (orientation:portrait){
+ 
+    
+}

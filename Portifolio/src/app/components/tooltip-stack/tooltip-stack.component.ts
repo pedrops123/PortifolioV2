@@ -8,21 +8,22 @@ import { AfterViewInit, Component, ElementRef, Input, OnChanges, OnInit, Rendere
 export class TooltipStackComponent implements OnInit , AfterViewInit , OnChanges {
   
   @Input('hover') isHover :Boolean;
-  @ViewChild('divMain') _ToolTipMain :ElementRef;
+  @Input('TextoTooltip') texto :string;
+  @ViewChild('divMain', { static: true }) _ToolTipMain :ElementRef;
   
   constructor(private render:Renderer2) { }
   ngOnChanges(changes: SimpleChanges): void {
     if(this.isHover){
-      this.render.setStyle(this._ToolTipMain.nativeElement , "display","block");
+      this.render.removeClass(this._ToolTipMain.nativeElement,'hide');
     }
      else{
-      this.render.setStyle(this._ToolTipMain.nativeElement , "display","none");
+      this.render.addClass(this._ToolTipMain.nativeElement , "hide");
     }
   }
 
   ngAfterViewInit(): void {
     console.log(this._ToolTipMain);
-    this.render.setStyle(this._ToolTipMain.nativeElement , "display","none");
+    this.render.addClass(this._ToolTipMain.nativeElement , "hide");
   }
 
 

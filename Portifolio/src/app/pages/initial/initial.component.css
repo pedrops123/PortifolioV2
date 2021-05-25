@@ -35,7 +35,6 @@
 
  #area-foto{
     display: grid;
-    grid-template-columns: 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
  }
  
@@ -79,12 +78,40 @@
     box-shadow: 5px 5px 9px 1px #339bff;
 }
 
+
+
+
+
+#img-angular.base-logo-stack.animation {
+    box-shadow: 5px 5px 9px 1px red;
+}
+
+#img-dotnet.base-logo-stack.animation {
+
+    box-shadow: 5px 5px 9px 1px #9b4f96;
+}
+
+#img-html.base-logo-stack.animation {
+    box-shadow: 5px 5px 9px 1px #f16524;
+}
+
+#img-css.base-logo-stack.animation {
+    box-shadow: 5px 5px 9px 1px #339bff;
+}
+
+
 .stack-bottom {
     margin: 66px 0px 0px 0px;
 }
 
 .stack-up {
     margin: 30px 0px 0px 0px;
+}
+
+.area-tooltip{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    height: 100%;
 }
 
 /*
