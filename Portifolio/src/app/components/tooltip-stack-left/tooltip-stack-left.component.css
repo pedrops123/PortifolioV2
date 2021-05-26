@@ -22,32 +22,14 @@
     flex-direction: column;
 }
 
-.arrow-down {
-    width: 0;
-    height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-top: 20px solid darkgray;
-    z-index: 2;
-  }
-
-  .arrow-right {
-    width: 0; 
-    height: 0; 
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    z-index: 2;
-    border-left: 20px solid darkgray;
-  }
-  
-  .arrow-left {
+.arrow-left {
     width: 0; 
     height: 0; 
     border-top: 20px solid transparent;
     border-bottom: 20px solid transparent; 
     z-index: 2;
     border-right:20px solid darkgray; 
-  }
+}
   
 
 @media screen and (max-width:700px) and (orientation:portrait){

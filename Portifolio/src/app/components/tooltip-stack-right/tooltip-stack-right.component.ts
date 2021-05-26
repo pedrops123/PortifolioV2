@@ -1,17 +1,17 @@
 import { AfterViewInit, Component, ElementRef, Input, OnChanges, OnInit, Renderer2, SimpleChanges, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'tooltip-stack-component',
-  templateUrl: './tooltip-stack.component.html',
-  styleUrls: ['./tooltip-stack.component.css']
+  selector: 'tooltip-right',
+  templateUrl: './tooltip-stack-right.component.html',
+  styleUrls: ['./tooltip-stack-right.component.css']
 })
-export class TooltipStackComponent implements OnInit , AfterViewInit , OnChanges {
-  
+export class TooltipStackRightComponent implements OnInit , AfterViewInit , OnChanges {
+
   @Input('hover') isHover :Boolean;
   @Input('idElemento') Id : string;
   @Input('TooltipType') type :string;
   @Input('TextoTooltip') texto :string;
-  @ViewChild('divMainR', { static: true }) _ToolTipMain :ElementRef;
+  @ViewChild('divMain', { static: true }) _ToolTipMain :ElementRef;
   
   
   constructor(private render:Renderer2) {
@@ -35,5 +35,4 @@ export class TooltipStackComponent implements OnInit , AfterViewInit , OnChanges
 
   ngOnInit(): void {
   }
-
 }

@@ -23,6 +23,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ComponentsModule } from './components/components.module';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ServicesModule } from './services/services.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +40,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    ServicesModule,
     BrowserAnimationsModule,
     rotaApp,
     HttpClientModule,
@@ -52,11 +54,6 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
           deps: [HttpClient]
       }
   })
-  ],
-  providers: [
-    MenuServiceService,
-    WorkServiceService,
-    DetailWorkService
   ],
   bootstrap: [AppComponent]
 }) 

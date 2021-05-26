@@ -1,7 +1,14 @@
 <div class="grid-fundo-inicial">
     <div class="area-tooltip">
         <div *ngFor="let tips of stackArray">
-            <tooltip-stack-component *ngIf="tips.tooltip" [TextoTooltip]="tips.descriptionTooltip" [hover]="tips.active"></tooltip-stack-component>
+               <ng-template *ngif="tips.tooltipType == 'right'">
+                    <tooltip-right *ngIf="tips.tooltip" [TooltipType]="tips.tooltipType" [idElemento]="tips.id" [TextoTooltip]="tips.descriptionTooltip" [hover]="tips.active"></tooltip-right>
+               </ng-template>
+
+               <ng-template *ngif="tips.tooltipType == 'left'">
+                    <tooltip-left *ngIf="tips.tooltip" [TooltipType]="tips.tooltipType" [idElemento]="tips.id" [TextoTooltip]="tips.descriptionTooltip" [hover]="tips.active"></tooltip-left>
+               </ng-template>
+            <tooltip-stack-component *ngIf="tips.tooltip" [TooltipType]="tips.tooltipType" [idElemento]="tips.id" [TextoTooltip]="tips.descriptionTooltip" [hover]="tips.active"></tooltip-stack-component>
         </div>
     </div>
     <div class="area-boas-vindas">

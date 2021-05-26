@@ -7,6 +7,8 @@ import { LightboxModule } from 'ngx-lightbox';
 import { CarrouselWorkComponent } from './carrousel-work/carrousel-work.component';
 import { TooltipStackComponent } from './tooltip-stack/tooltip-stack.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { TooltipStackRightComponent } from './tooltip-stack-right/tooltip-stack-right.component';
+import { TooltipStackLeftComponent } from './tooltip-stack-left/tooltip-stack-left.component';
 
 
 @NgModule({
@@ -14,13 +16,17 @@ import { TranslateModule } from '@ngx-translate/core';
     CardLayoutComponent,
     LoadingComponent,
     CarrouselWorkComponent,
-    TooltipStackComponent
+    TooltipStackComponent,
+    TooltipStackRightComponent,
+    TooltipStackLeftComponent
   ],
   exports:[
     CardLayoutComponent,
     LoadingComponent,
     CarrouselWorkComponent,
-    TooltipStackComponent
+    TooltipStackComponent,
+    TooltipStackRightComponent,
+    TooltipStackLeftComponent
   ],
   imports: [
     CommonModule,
