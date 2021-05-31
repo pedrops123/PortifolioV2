@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from 'src/app/app.component';
 //import { PageEvent } from '@angular/material/paginator';
 import { DataCardComponent } from 'src/app/models/DataCardComponent';
 import { PaginationCardsParameter } from 'src/app/models/PaginationCardsParameter';
@@ -22,7 +23,11 @@ export class WorksComponent implements OnInit {
   enableLoading:boolean;
   enableContent:boolean;
 
-  constructor(private serviceWorks:WorkServiceService) {
+  constructor(
+    private serviceWorks:WorkServiceService,
+     component:AppComponent
+     ) {
+    component.setTitle('Meus Trabalhos');
 /* 
       let eventInitial:PageEvent = {
         length:this.totalLength,

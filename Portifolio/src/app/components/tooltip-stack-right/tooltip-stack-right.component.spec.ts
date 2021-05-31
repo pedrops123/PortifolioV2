@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BaseLayoutComponent } from './base-layout.component';
+import { TooltipStackRightComponent } from './tooltip-stack-right.component';
 
-describe('BaseLayoutComponent', () => {
-  let component: BaseLayoutComponent;
-  let fixture: ComponentFixture<BaseLayoutComponent>;
+describe('TooltipStackRightComponent', () => {
+  let component: TooltipStackRightComponent;
+  let fixture: ComponentFixture<TooltipStackRightComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BaseLayoutComponent ]
+      declarations: [ TooltipStackRightComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BaseLayoutComponent);
+    fixture = TestBed.createComponent(TooltipStackRightComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

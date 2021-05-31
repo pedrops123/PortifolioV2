@@ -169,8 +169,7 @@ namespace webApi.Repository{
 
         public ValidationLogin ValidationLogin(LoginFormModel dadosUser , IConfiguration configurationGlobal){
            ValidationLogin retornoLogin = new ValidationLogin();
-           LoginValidator validator = new LoginValidator();
-           ValidationResult result =  validator.Validate(dadosUser); 
+           ValidationResult result =  new LoginValidator().Validate(dadosUser);  
            if(result.IsValid){
               retornoLogin =  validaLogin(dadosUser);
               if(retornoLogin.validado){

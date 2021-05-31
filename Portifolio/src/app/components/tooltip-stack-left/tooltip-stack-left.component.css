@@ -1,0 +1,109 @@
+.main-tooltip{
+    display: inline-grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto auto;
+    position: absolute;
+    justify-items: center;
+    align-items: center;
+    user-select: none;
+}
+
+.main-tooltip.hide {
+    display: none;
+}
+
+.tooltip-stack {
+   
+    background-color: darkgray;
+    border-radius: 9px;
+    padding: 9px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 18px;
+    flex-direction: column;
+}
+
+.arrow-left {
+    width: 0; 
+    height: 0; 
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent; 
+    z-index: 2;
+    border-right:20px solid darkgray; 
+}
+  
+
+@media screen and (min-width:800px){
+    .main-tooltip{
+        font-size: 15pt !important;
+    }
+    #tooltip-img-angular {
+        margin-left: 86px;
+    }
+
+    #tooltip-img-dotnet{
+        margin-left: 86px;
+    }
+}
+
+
+
+@media screen and (max-width:700px) {
+    .main-tooltip{
+        font-size: 10pt !important;
+    }
+    #tooltip-img-angular {
+        margin-left: 86px;
+    }
+
+    #tooltip-img-dotnet{
+        margin-left: 86px;
+    }
+}
+
+@media screen and (max-width:519px) {
+    .main-tooltip{
+        font-size: 7pt !important;
+    }
+    #tooltip-img-angular {
+        margin-left: 57px;
+        margin-top: -42px;
+    }
+
+    #tooltip-img-dotnet{
+        margin-left: 57px;
+        margin-top: -42px;
+    }
+
+}
+
+@media screen and (max-width:400px) {
+    .main-tooltip{
+        font-size: 7pt !important;
+    }
+    #tooltip-img-angular {
+        margin-left: 57px;
+        margin-top: -42px;
+    }
+
+    #tooltip-img-dotnet{
+        margin-left: 57px;
+        margin-top: -42px;
+    }
+}
+
+@media screen and (max-width:325px) {
+    .main-tooltip{
+        font-size: 6pt  !important;
+    }
+    
+    #tooltip-img-angular {
+        top: 234px;
+    }
+
+    #tooltip-img-dotnet{
+        top: 234px;
+    }
+}

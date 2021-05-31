@@ -1,15 +1,55 @@
 <div class="grid-fundo-inicial">
-    <div></div>
+    <div class="area-tooltip">
+        <!--
+      <div *ngFor="let tips of stackArray">
+               <ng-template [ngIf]="tips.tooltipType === 'right'">
+                    <tooltip-left *ngIf="tips.tooltip" [TooltipType]="tips.tooltipType" [idElemento]="tips.id" [TextoTooltip]="tips.descriptionTooltip" [(hover)]="tips.active"></tooltip-left>
+               </ng-template>
+
+               <ng-template [ngIf]="tips.tooltipType === 'left'">
+                    <tooltip-right *ngIf="tips.tooltip" [TooltipType]="tips.tooltipType" [idElemento]="tips.id" [TextoTooltip]="tips.descriptionTooltip" [(hover)]="tips.active"></tooltip-right>
+               </ng-template>
+        </div>
+
+        -->
+    </div>
     <div class="area-boas-vindas">
-        <img class="img-foto" src="../../../assets/foto_perfil/foto_perfil.jpg">
-        <img class="base-logo-stack img_angular" src="../../../assets/stacks/angular.png">
-        <img class="base-logo-stack img_dotnet" src="../../../assets/stacks/dotnet.png">
-        <img class="base-logo-stack img_html" src="../../../assets/stacks/html5.png">
-        <img class="base-logo-stack img_css" src="../../../assets/stacks/css3.png">
-        <div class="painel-boas-vindas">
-            Ola Seja bem vindo ao meu portifólio ! <br/><br/>
-            Desenvolvedor web , paulista , 25 anos , graduado 
-            em Analise e desenvolvimento de sistemas , e apaixonado por tecnologia. 
+        <div id="area-foto">
+            <div *ngFor="let stack of stackArray" class="flex-stack">
+                <ng-template [ngIf]="stack.tooltipType === 'right'">
+                    <tooltip-left *ngIf="stack.tooltip" [TooltipType]="stack.tooltipType" [idElemento]="stack.id" [TextoTooltip]="stack.descriptionTooltip" [(hover)]="stack.active"></tooltip-left>
+               </ng-template>
+
+               <ng-template [ngIf]="stack.tooltipType === 'left'">
+                    <tooltip-right *ngIf="stack.tooltip" [TooltipType]="stack.tooltipType" [idElemento]="stack.id" [TextoTooltip]="stack.descriptionTooltip" [(hover)]="stack.active"></tooltip-right>
+               </ng-template>
+                <img (mouseover)="stack.active = true" (mouseout)="stack.active = false" [id]="stack.id" [class]="stack.class" [src]="stack.fotoStack">
+            </div>
+            <!--
+            <div class="flex-stack">
+                <tooltip-stack-component [hover]="true"></tooltip-stack-component>
+                <img id="img-angular" class="base-logo-stack img_angular stack-bottom" src="../../../assets/stacks/angular.png">
+            </div>
+            <div class="flex-stack">
+                <tooltip-stack-component></tooltip-stack-component>
+                <img id="img-dotnet" class="base-logo-stack img_dotnet stack-up" src="../../../assets/stacks/dotnet.png">
+            </div>
+            <div class="flex-stack">
+                <img class="img-foto" src="../../../assets/foto_perfil/foto_perfil.jpg">
+            </div>
+            <div class="flex-stack">
+                <tooltip-stack-component></tooltip-stack-component>
+                <img id="img-html" class="base-logo-stack img_html stack-up" src="../../../assets/stacks/html5.png">
+            </div>
+            <div class="flex-stack">
+                <tooltip-stack-component></tooltip-stack-component>
+                <img id="img-css" class="base-logo-stack img_css stack-bottom" src="../../../assets/stacks/css3.png">
+            </div>
+            -->
+           
+        </div>
+        <div id="area-content">
+            <div  [innerHTML]="'telainicial.mensagem-inicial' | translate" class="painel-boas-vindas"></div>
         </div>
     </div>
     <br/><br/><br/><br/><br/><br/>

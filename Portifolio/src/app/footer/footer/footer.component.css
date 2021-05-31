@@ -4,7 +4,9 @@
     text-align: center;
 }
 
-
+p{
+    user-select: none;
+}
 
 @media screen and (max-width:187px){
 

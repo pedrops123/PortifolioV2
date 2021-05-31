@@ -1,0 +1,10 @@
+{
+    "telainicial":{
+        "mensagem-inicial":"Ola , Seja bem vindo ao meu portifolio ! <br/> Meu nome é Pedro Furlan , tenho 24 anos , sou desenvolvedor Fullstack "
+    },
+    "telaTrabalhos":{
+        "description-bottom-btn":"Visualizar Projeto"
+    },
+    "DescricaoRodape":"Pedro Vinicius Rodrigues Furlan &copy Todos os direitos reservados",
+    "CabecalhoNome":"Pedro Furlan &nbsp;&nbsp;&nbsp;&nbsp;"
+}
