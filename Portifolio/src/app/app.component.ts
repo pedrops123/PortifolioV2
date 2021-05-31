@@ -1,4 +1,6 @@
 import { Component, ElementRef } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +9,12 @@ import { Component, ElementRef } from '@angular/core';
 })
 export class AppComponent {
 
-  title = 'Portifolio';
   buttonVisible:boolean;
 
-  constructor(){
+  constructor(private titleService:Title , private translate:TranslateService){
+
+    translate.setDefaultLang('pt-BR');
+
     document.onscroll = ($element)=> { 
       const elementToolbar:HTMLElement = document.documentElement;
       elementToolbar.scrollTop > 90 ? this.buttonVisible = true : this.buttonVisible = false; 
@@ -21,6 +25,10 @@ export class AppComponent {
   scrollToTop(){
     var elementoDOM = document.getElementById('topo');
     elementoDOM.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+  }
+
+  setTitle(description:string){
+    this.titleService.setTitle(`Portfólio - ${ description }`);
   }
 
 

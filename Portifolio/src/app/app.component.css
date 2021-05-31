@@ -2,7 +2,7 @@
     position: fixed !important;
     right: 2%;
     top: 78%;
-    background-color: red;
+    border-radius:20px;
 }
 
 @media screen and (max-width:480px){

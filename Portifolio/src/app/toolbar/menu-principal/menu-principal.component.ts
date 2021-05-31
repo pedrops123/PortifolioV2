@@ -18,7 +18,7 @@ export class MenuPrincipalComponent implements OnInit {
   constructor(private router:Router , private routerActive:ActivatedRoute,  private serviceMenu:MenuServiceService) {
    
     serviceMenu.getMenuInicial().subscribe(
-        Response =>{ this.dadosMenu = Response.retornoObjeto; console.log(Response.retornoObjeto)}  , 
+        Response =>{  this.dadosMenu = Response.retornoObjeto; }  , 
         error => console.log('Ocorreu um erro na coleta dos dados ' + error.message) 
       );
    }

@@ -2,7 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 /* Imports componentes |  */
 import { AppComponent } from './app.component';
@@ -12,19 +12,18 @@ import { WorksComponent } from './pages/works/works.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { rotaApp } from './routes/app.routes';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { BaseLayoutComponent } from './components/base-layout/base-layout.component';
-import { SiteLayoutComponent } from './components/site-layout/site-layout.component';
 import { MenuServiceService } from './services/menu/menu-service.service';
 import { LoginModule } from './pages/login/login.module';
 import { DirectivesModuleModule } from './directives/directives-module.module';
-import { CardLayoutComponent } from './components/card-layout/card-layout.component';
 import { FooterComponent } from './footer/footer/footer.component';
 import { WorkServiceService } from './services/works/work-service.service';
 import { DetailWorkComponent } from './pages/detail-work/detail-work.component';
-import { CarrouselWorkModule } from './components/carrousel-work/carrousel-work.module';
 import { DetailWorkService } from './services/detail-work/detail-work.service';
-import { LoadingModule } from './components/loading/loading.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ComponentsModule } from './components/components.module';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ServicesModule } from './services/services.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,9 +32,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     WorksComponent,
     ContactComponent,
     NotFoundComponent,
-    BaseLayoutComponent,
-    SiteLayoutComponent,
-    CardLayoutComponent,
     FooterComponent,
     DetailWorkComponent,
     
@@ -44,20 +40,25 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    ServicesModule,
     BrowserAnimationsModule,
     rotaApp,
     HttpClientModule,
     LoginModule,
     DirectivesModuleModule,
-    CarrouselWorkModule,
-    LoadingModule
-
-  ],
-  providers: [
-    MenuServiceService,
-    WorkServiceService,
-    DetailWorkService
+    ComponentsModule,
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      },
+  })
   ],
   bootstrap: [AppComponent]
 }) 
 export class AppModule { }
+
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http);
+}
