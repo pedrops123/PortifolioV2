@@ -52,7 +52,7 @@ import { ServicesModule } from './services/services.module';
           provide: TranslateLoader,
           useFactory: HttpLoaderFactory,
           deps: [HttpClient]
-      }
+      },
   })
   ],
   bootstrap: [AppComponent]

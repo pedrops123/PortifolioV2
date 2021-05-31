@@ -4,6 +4,7 @@
     display: grid;
     transition :0.5s;
     grid-template-rows: auto auto auto;
+    user-select: none;
 }
 
 
@@ -20,8 +21,9 @@
 
 .bottom-card > button{
     width: 90px;
-    height: 39px;
+    height: auto;
     align-self: center;
+    font-size: 10pt;
 }
 
 .descritivo-card{

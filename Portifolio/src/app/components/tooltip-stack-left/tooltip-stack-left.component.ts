@@ -9,7 +9,6 @@ export class TooltipStackLeftComponent implements OnInit , AfterViewInit , OnCha
 
   @Input('hover') isHover :Boolean;
   @Input('idElemento') Id : string;
-  @Input('TooltipType') type :string;
   @Input('TextoTooltip') texto :string;
   @ViewChild('divMain', { static: true }) _ToolTipMain :ElementRef;
   

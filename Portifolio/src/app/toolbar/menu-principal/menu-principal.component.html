@@ -2,8 +2,8 @@
   <div class="area_btns">
        <a *ngFor="let button of dadosMenu" [routerLinkActive]="'active'" [routerLink]="button.href" class="link_menu"><i class=""></i> {{ button.description }}</a>
   </div>
-  <div [ngClass]="!hasRoute('inicio') ? 'area_logo' : 'area_logo hide' ">
-      Pedro Furlan &nbsp;&nbsp;&nbsp;&nbsp;
+  <div  [ngClass]="!hasRoute('inicio') ? 'area_logo' : 'area_logo hide' ">
+     <div [innerHTML]="'CabecalhoNome' | translate"></div>
       <div class="foto_perfil"> 
         <img src="../../../assets/foto_perfil/foto_perfil.jpg"/>
       </div>
@@ -11,13 +11,13 @@
   
 </div>
 <div *ngIf="!hasRoute('inicio')" class="bread_crumb">
-  <a *ngIf="hasRoute('work')"><a  routerLink="/inicio">&nbsp;&nbsp; Inicio / </a>Meus Trabalhos</a>
-  <a *ngIf="hasRoute('contact')"><a  routerLink="/inicio">&nbsp;&nbsp; Inicio / </a>Contato</a>
-  <a *ngIf="hasRoute('detail')"> 
+  <p *ngIf="hasRoute('work')"><a  routerLink="/inicio">&nbsp;&nbsp; Inicio / </a>Meus Trabalhos</p>
+  <p *ngIf="hasRoute('contact')"><a  routerLink="/inicio">&nbsp;&nbsp; Inicio / </a>Contato</p>
+  <p *ngIf="hasRoute('detail')"> 
     <a  routerLink="/inicio">&nbsp;&nbsp; Inicio /  </a>  
     <a  routerLink="/work">&nbsp; Meus Trabalhos  / </a>  
     <a>&nbsp;&nbsp; Detalhamento Trabalho {{ getIdDescription() }} </a>  
-   </a>
+  </p>
 </div>
 
 

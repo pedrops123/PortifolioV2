@@ -1,9 +1,11 @@
 .main-tooltip{
     display: inline-grid;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto;
+    grid-template-columns: auto auto;
     position: absolute;
     justify-items: center;
-    top: 110px;
+    align-items: center;
+    user-select: none;
 }
 
 .main-tooltip.hide {
@@ -15,6 +17,7 @@
     background-color: darkgray;
     border-radius: 9px;
     padding: 9px;
+    padding: 18px;
     z-index: 2;
     display: flex;
     justify-content: center;
@@ -32,37 +35,82 @@
   }
   
 
-@media screen and (max-width:700px) and (orientation:portrait){
 
+
+
+  @media screen and (min-width:800px){
     .main-tooltip{
-        font-size: 7pt;
-        top: 425px;
+        font-size: 15pt !important;
+    }
+    #tooltip-img-html {
+        margin-left: -224px;
     }
 
-
+    #tooltip-img-css {
+        margin-left: -224px;
+        
+    }
 }
 
-@media screen and (max-width:519px) and (orientation:portrait){
 
+
+@media screen and (max-width:700px) {
     .main-tooltip{
-        font-size: 7pt;
-        top: 425px;
+        font-size: 10pt !important;
+    }
+    #tooltip-img-html {
+        margin-left: -224px;
     }
 
-    
+    #tooltip-img-css {
+        margin-left: -224px;
+        
+    }
 }
 
-@media screen and (max-width:400px) and (orientation:portrait){
+@media screen and (max-width:519px) {
     .main-tooltip{
-        font-size: 7pt;
-        top: 91px;
+        font-size: 7pt !important;
     }
 
+    #tooltip-img-html {
+        margin-left: -119px;
+        margin-top: -42px;
+    }
+
+    #tooltip-img-css {
+        margin-left: -119px;
+        margin-top: -42px;
+        
+    }
 }
 
-@media screen and (max-width:325px) and (orientation:portrait){
+@media screen and (max-width:400px) {
     .main-tooltip{
-        font-size: 7pt;
-        top: 425px;
-    }    
+        font-size: 7pt !important;
+    }
+    #tooltip-img-html {
+        margin-left: -119px;
+        margin-top: -42px;
+    }
+
+    #tooltip-img-css {
+        margin-left: -119px;
+        margin-top: -42px;
+    }
+}
+
+@media screen and (max-width:325px) {
+    .main-tooltip{
+        font-size: 6pt  !important;
+    }
+    #tooltip-img-html {
+        margin-left: -119px;
+        margin-top: 9px;
+    }
+
+    #tooltip-img-css {
+        margin-left: -119px;
+        margin-top: 9px;
+    }
 }

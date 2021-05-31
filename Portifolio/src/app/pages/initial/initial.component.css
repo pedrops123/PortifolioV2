@@ -30,7 +30,7 @@
     padding: 46px;
     width: 70%;
     height: auto;
-    
+    text-align: center;
 }
 
  #area-foto{
@@ -41,6 +41,7 @@
 .area-boas-vindas .flex-stack , .area-boas-vindas #area-content {
     display: flex;
     justify-content: center;
+    user-select: none;
 
 }
 

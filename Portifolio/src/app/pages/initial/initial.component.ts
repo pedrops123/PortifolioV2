@@ -3,6 +3,8 @@ import { AppComponent } from 'src/app/app.component';
 import  $ from 'jquery';
 import { CookieService } from 'src/app/services/Cookie/cookie.service';
 import { LocalStorageService } from 'src/app/services/LocalStorage/local-storage.service';
+import { dataArray } from './InitialModelFactory';
+import { ModelInitialStacks } from 'src/app/models/ModelInitialStacks';
 
 @Component({
   selector: 'app-initial',
@@ -10,58 +12,8 @@ import { LocalStorageService } from 'src/app/services/LocalStorage/local-storage
   styleUrls: ['./initial.component.css']
 })
 export class InitialComponent implements OnInit {
-  stackArray:any[] = [
+  stackArray:ModelInitialStacks[] = dataArray;
 
-    {
-      fotoStack:'../../../assets/stacks/angular.png',
-      class: 'base-logo-stack img_angular stack-bottom',
-      id:'img-angular',
-      tooltip:true,
-      tooltipType:'right',
-      descriptionTooltip:`<b>Texto Angular</b> <br/><br/> teste de texto no tooltip , isto é apenas um teste simples <br/> de como ficará o tooltip com o texto original!<br/>`,
-      active:true
-    },
-    {
-      fotoStack:'../../../assets/stacks/dotnet.png',
-      class: 'base-logo-stack img_dotnet stack-up',
-      id:'img-dotnet',
-      tooltip:true,
-      tooltipType:'right',
-      descriptionTooltip:`<b>Texto Dotnet</b> <br/><br/> teste de texto no tooltip , isto é apenas um teste simples <br/> de como ficará o tooltip com o texto original!<br/>`,
-      active:false
-    },
-    {
-      fotoStack:'../../../assets/foto_perfil/foto_perfil.jpg',
-      class: 'img-foto',
-      id:'',
-      tooltip:false,
-      tooltipType:'',
-      descriptionTooltip:'',
-      active:false
-    },
-    {
-      fotoStack:'../../../assets/stacks/html5.png',
-      class: 'base-logo-stack img_html stack-up',
-      id:'img-html',
-      tooltipType:'left',
-      tooltip:true,
-      descriptionTooltip:`<b>Texto HTML</b> <br/><br/> teste de texto no tooltip ,
-                           isto é apenas um teste simples <br/> de como ficará o
-                           tooltip com o texto original!<br/><br/><br/><br/><br/><br/>
-                           <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>`,
-      active:false
-    },
-    {
-      fotoStack:'../../../assets/stacks/css3.png',
-      class: 'base-logo-stack img_css stack-bottom',
-      id:'img-css',
-      tooltipType:'left',
-      tooltip:true,
-      descriptionTooltip:`<b>Texto CSS</b> <br/><br/> teste de texto no tooltip , isto é apenas um teste simples <br/> de como ficará o tooltip com o texto original!<br/>`,
-      active:true
-    }
-
-  ]; 
   constructor(component:AppComponent , private LocalStorageService:LocalStorageService) {
       component.setTitle('Pagina Inicial');      
       //console.log(LocalStorageService.getItem('complete_animation'));
