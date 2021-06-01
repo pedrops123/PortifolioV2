@@ -1,10 +1,8 @@
 {
     "telainicial":{
-        "mensagem-inicial":"Ola , Seja bem vindo ao meu portifolio ! <br/> Meu nome é Pedro Furlan , tenho 24 anos , sou desenvolvedor Fullstack "
+        "mensagem-inicial":"<b>Ola , Seja bem vindo ao meu Portifolio ! </b> <br/><br/> Meu nome é $nameDev , $year , Paulista , graduado em Analise e Desenvolvimento de sistemas , sou desenvolvedor Web . Comecei em $anoInicio como estagiario e pouco tempo depois passei para desenvolvedor Júnior , e atualmente sou desenvolvedor Pleno. <br/> <br/> Tenho experiencia nas seguintes stacks: $ArrayStacks e SQL Server.  Possuo experiencia em automação de sistemas como XUnit e Selenium."
     },
     "telaTrabalhos":{
-        "description-bottom-btn":"Visualizar Projeto"
-    },
-    "DescricaoRodape":"Pedro Vinicius Rodrigues Furlan &copy Todos os direitos reservados",
-    "CabecalhoNome":"Pedro Furlan &nbsp;&nbsp;&nbsp;&nbsp;"
+        "description-bottom-btn":"<span class=\"fas fa-eye\"></span> &nbsp; Visualizar"
+    }
 }

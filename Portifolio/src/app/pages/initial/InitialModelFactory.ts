@@ -2,6 +2,7 @@ import { ModelInitialStacks } from "src/app/models/ModelInitialStacks";
 
 export const dataArray:ModelInitialStacks[] = [
     {
+        nameStack:'Angular',
         fotoStack:'../../../assets/stacks/angular.png',
         class: 'base-logo-stack img_angular stack-bottom',
         id:'img-angular',
@@ -20,6 +21,7 @@ export const dataArray:ModelInitialStacks[] = [
         active:false
       },
       {
+        nameStack:'.NET Framework/ C# / ASP.NET CORE',
         fotoStack:'../../../assets/stacks/dotnet.png',
         class: 'base-logo-stack img_dotnet stack-up',
         id:'img-dotnet',
@@ -35,6 +37,7 @@ export const dataArray:ModelInitialStacks[] = [
         active:false
       },
       {
+        nameStack:'',
         fotoStack:'../../../assets/foto_perfil/foto_perfil.jpg',
         class: 'img-foto',
         id:'',
@@ -44,6 +47,7 @@ export const dataArray:ModelInitialStacks[] = [
         active:false
       },
       {
+        nameStack:'HTML 5',
         fotoStack:'../../../assets/stacks/html5.png',
         class: 'base-logo-stack img_html stack-up',
         id:'img-html',
@@ -58,12 +62,13 @@ export const dataArray:ModelInitialStacks[] = [
         active:false
       },
       {
+        nameStack:'CSS3',
         fotoStack:'../../../assets/stacks/css3.png',
         class: 'base-logo-stack img_css stack-bottom',
         id:'img-css',
         tooltipType:'left',
         tooltip:true,
-        descriptionTooltip:`<b> CSS </b> <br/> 
+        descriptionTooltip:`<b> CSS </b> <br/> &nbsp;
                             <b>Experiência:</b> 5 anos <br/>  
                             <b>Atividades :</b> <br/>
                             * Flex Box <br/>

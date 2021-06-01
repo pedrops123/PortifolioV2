@@ -3,6 +3,16 @@
     right: 2%;
     top: 78%;
     border-radius:20px;
+    background-color: black;
+    color:white;
+    width: 41px;
+    height: 41px;
+    border:none;
+}
+
+.btn-up:hover {
+    box-shadow: white 1px 1px 1px 1px;
+
 }
 
 @media screen and (max-width:480px){
@@ -10,7 +20,7 @@
     .btn-up {
         position: fixed !important;
         right: 2%;
-        top:90%;
+        top: 84%;
         width: 41px;
         height: 41px;
     }

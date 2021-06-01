@@ -1,11 +1,14 @@
 import { Component, ElementRef } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { RouterOutlet } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { fader } from './routes/route-animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations:[fader]
 })
 export class AppComponent {
 
@@ -32,6 +35,10 @@ export class AppComponent {
   }
 
 
+
+  prepareRoute(outlet:RouterOutlet){
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+  }
 }
 
 

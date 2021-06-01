@@ -5,6 +5,7 @@ import { WorkServiceService } from './works/work-service.service';
 import { DetailWorkService } from './detail-work/detail-work.service';
 import { CookieService } from './Cookie/cookie.service';
 import { LocalStorageService } from './LocalStorage/local-storage.service';
+import { GeneralParametersService } from './GeneralParameters/general-parameters.service';
 
 
 
@@ -18,7 +19,9 @@ import { LocalStorageService } from './LocalStorage/local-storage.service';
     WorkServiceService,
     DetailWorkService,
     CookieService,
-    LocalStorageService
+    LocalStorageService,
+    GeneralParametersService
+
   ]
 })
 export class ServicesModule { }

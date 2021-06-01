@@ -3,7 +3,7 @@
        <a *ngFor="let button of dadosMenu" [routerLinkActive]="'active'" [routerLink]="button.href" class="link_menu"><i class=""></i> {{ button.description }}</a>
   </div>
   <div  [ngClass]="!hasRoute('inicio') ? 'area_logo' : 'area_logo hide' ">
-     <div [innerHTML]="'CabecalhoNome' | translate"></div>
+     {{ generalParameters.getNameDev() | titlecase }} &nbsp;&nbsp;
       <div class="foto_perfil"> 
         <img src="../../../assets/foto_perfil/foto_perfil.jpg"/>
       </div>

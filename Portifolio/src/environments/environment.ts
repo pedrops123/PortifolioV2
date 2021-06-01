@@ -9,7 +9,8 @@
 export const environment = {
   production: false,
   app_server : 'https://localhost:5001',
-  
+  name_dev: 'pedro furlan',
+  dataInicioCarreira:2016
 };
 
 /*
