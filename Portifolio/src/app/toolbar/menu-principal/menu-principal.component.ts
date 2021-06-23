@@ -14,7 +14,8 @@ import { MenuServiceService } from 'src/app/services/menu/menu-service.service';
 export class MenuPrincipalComponent implements OnInit {
 
   dadosMenu:ButtonsMenu[];
- 
+  
+  idProjetoDisplay:Number;
 
   constructor(
     private router:Router , 
@@ -35,13 +36,9 @@ export class MenuPrincipalComponent implements OnInit {
     return this.router.url.includes(route);
   }
 
-  
-  getIdDescription(){
-    let id = this.routerActive.snapshot.paramMap.get('idWork');
-    //console.log(id);
-    return id;
+  setIdProject(idProjeto:Number){
+    this.idProjetoDisplay = idProjeto;
   }
-  
 
 
 }

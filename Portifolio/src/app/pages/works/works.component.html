@@ -1,16 +1,11 @@
 <div class="container-works">
 
   <div class="display-trabalhos-grid">
-      <card-layout-component></card-layout-component>
-      <card-layout-component></card-layout-component>
-      <card-layout-component></card-layout-component>
-      <card-layout-component></card-layout-component>
-      <card-layout-component></card-layout-component>
-      <card-layout-component></card-layout-component>
-      <card-layout-component></card-layout-component>
-      <card-layout-component></card-layout-component>
-      <card-layout-component></card-layout-component>
-      <card-layout-component></card-layout-component>
+      <card-layout-component 
+      *ngFor="let itemCard of dataExample"
+      [idProjeto]="itemCard.id" 
+      [urlFoto]="itemCard.foto" 
+      [description]="itemCard.description" ></card-layout-component>
   </div>
 
   <nav class="custom-paginator" aria-label="...">

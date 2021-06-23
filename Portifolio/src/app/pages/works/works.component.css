@@ -6,8 +6,8 @@
 .container-works{
     display: grid;
     position: relative;
-    height: 100%; 
-    grid-template-rows: 12fr 1fr;
+    height: 100%;
+    grid-template-rows: auto 48vh;
 }
 
 .custom-paginator {
@@ -27,6 +27,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill,216px);
     grid-gap: 20px;
+    justify-content: center;
     margin: 23px;
 }
 

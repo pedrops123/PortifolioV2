@@ -1,15 +1,25 @@
-<div  class="center-component">
-  <div class="painel_geral">
-    <div id="cmp_carrousel">
-       <carrousel-work [fotos]="dataProjeto.listaGaleria"></carrousel-work>
-    </div>
-    
-     <div class="painel-conteudo">
-       <h1> {{ dataProjeto.descriptionWork.title  }} </h1>
-       <div [innerHTML]="dataProjeto.descriptionWork.description"></div>
-     </div>
-
+<div id="grid-fundo-detalhe">
+  <div id="area-display-fotos">
+      <div class="container-display-foto-large">
+        <div class="directional-arrows-container">
+          <span (click)="setPreviousImage()" class="fa fa-angle-left"></span>
+        </div>
+        <div id="display-foto">
+            <img [src]="imageSelected">
+        </div>
+        <div class="directional-arrows-container">
+          <span (click)="setNextImage()" class="fa fa-angle-right"></span>
+        </div>
+      </div>
   </div>
-
+  <div id="area-fotos">
+      <div class="container-galeria">
+            <div id="area-title-projeto">Titulo Projeto</div>
+            <div id="area-description-work">lorem ipsum dolor bla bla lorem ipsum dolor bla bla lorem ipsum dolor bla bla lorem ipsum dolor bla bla lorem ipsum dolor bla bla lorem ipsum dolor bla bla lorem ipsum dolor bla bla lorem ipsum dolor bla bla lorem ipsum dolor bla blalorem ipsum dolor bla bla lorem ipsum dolor bla blalorem ipsum dolor bla bla lorem ipsum dolor bla blalorem ipsum dolor bla bla lorem ipsum dolor bla blalorem ipsum dolor bla bla lorem ipsum dolor bla blalorem ipsum dolor bla bla lorem ipsum dolor bla blalorem ipsum dolor bla bla lorem ipsum dolor bla blalorem ipsum dolor bla bla lorem ipsum dolor bla blalorem ipsum dolor bla bla lorem ipsum dolor bla blalorem ipsum dolor bla bla lorem ipsum dolor bla blalorem ipsum dolor bla bla lorem ipsum dolor bla blalorem ipsum dolor bla bla lorem ipsum dolor bla bla </div>
+            <div id="area-title-galeria"> Galeria de Fotos </div>
+            <div id="area-galeria">
+                <img *ngFor="let img of dataProjeto let i = index" [src]="img.src" (click)="openModalImg(i)">
+            </div>
+      </div>
+  </div>
 </div>
-

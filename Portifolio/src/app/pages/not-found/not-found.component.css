@@ -1,14 +1,25 @@
+.fundo-error-message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .notfoundComponent{
-    background-color: #3f51b5;
-    color:white;
-    width: 600px;
+    background-color: rgb(247 247 247);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    color:black;
+    width: 85%;
     height: 200px;
     border-radius: 10px 10px 10px 10px;
     text-align: center;
+    box-shadow:7px 10px 12px 0px black;
 } 
 
 a {
-    color: white;
+    color: black;
 }
 
 

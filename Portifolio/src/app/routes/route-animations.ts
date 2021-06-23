@@ -12,6 +12,7 @@ import  {
 
 export const fader =
 trigger('routeAnimations',[
+    transition('isLeft => isLeft', slideTo('left')),
     transition('* => isLeft', slideTo('left')),
     transition('* => isRight', slideTo('right')),
     transition('isRight => *', slideTo('left')),

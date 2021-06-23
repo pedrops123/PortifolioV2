@@ -31,6 +31,7 @@ main{
       grid-area: corpo;
       background-image: linear-gradient(to bottom right, rgb(255 255 255 / 61%), rgb(232 255 138 / 17%));
   }
+
   
   .footer {
       grid-area: footer;

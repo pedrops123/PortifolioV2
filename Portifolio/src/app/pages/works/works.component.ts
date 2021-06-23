@@ -4,6 +4,7 @@ import { AppComponent } from 'src/app/app.component';
 import { DataCardComponent } from 'src/app/models/DataCardComponent';
 import { PaginationCardsParameter } from 'src/app/models/PaginationCardsParameter';
 import { WorkServiceService } from 'src/app/services/works/work-service.service';
+import { data } from './data';
 
 
 @Component({
@@ -12,6 +13,7 @@ import { WorkServiceService } from 'src/app/services/works/work-service.service'
   styleUrls: ['./works.component.css']
 })
 export class WorksComponent implements OnInit {
+  dataExample:DataCardComponent[] = data;
   indexBefore = null;
   totalLength = 1000;
   qtdParada:number = 0;

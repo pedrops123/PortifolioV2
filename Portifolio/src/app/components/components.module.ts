@@ -11,6 +11,8 @@ import { TooltipStackRightComponent } from './tooltip-stack-right/tooltip-stack-
 import { TooltipStackLeftComponent } from './tooltip-stack-left/tooltip-stack-left.component';
 import { HttpLoaderFactory } from '../app.module';
 import { HttpClient } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -31,6 +33,7 @@ import { HttpClient } from '@angular/common/http';
     TooltipStackLeftComponent
   ],
   imports: [
+    RouterModule,
     CommonModule,
     SwiperModule,
     LightboxModule,

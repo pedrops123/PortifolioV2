@@ -10,7 +10,7 @@
 
 #form-contact
 {
-    width: 80%;
+    width: auto;
     height: 440px;
     background-color: lightgray;
     border-radius: 30px 0px 30px 0px;
@@ -74,6 +74,8 @@ input[type="email"].form-control {
 
 }
 
+
+
 @media(max-width:700px){
     textarea {
         resize: none;
@@ -105,7 +107,7 @@ input[type="email"].form-control {
 
     #form-contact
     {
-        width: 83%;
+        width: auto;
         height: 372px;
         background-color: lightgray;
         border-radius: 30px 0px 30px 0px;
