@@ -75,7 +75,7 @@ namespace webApi.Controllers
         [HttpPost]
         [Route("Logar")]
         [AllowAnonymous]
-        public ValidationLogin ValidaLogin(LoginFormModel dadosUser) => repositorio.ValidationLogin(dadosUser , configurationGlobal);
+        public RetornoGlobal<ValidationLogin> ValidaLogin(LoginFormModel dadosUser) => repositorio.ValidationLogin(dadosUser , configurationGlobal);
 
     }
 }

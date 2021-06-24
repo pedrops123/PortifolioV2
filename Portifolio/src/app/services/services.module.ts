@@ -6,6 +6,7 @@ import { DetailWorkService } from './detail-work/detail-work.service';
 import { CookieService } from './Cookie/cookie.service';
 import { LocalStorageService } from './LocalStorage/local-storage.service';
 import { GeneralParametersService } from './GeneralParameters/general-parameters.service';
+import { LoginServiceService } from './Login/login-service.service';
 
 
 
@@ -20,7 +21,8 @@ import { GeneralParametersService } from './GeneralParameters/general-parameters
     DetailWorkService,
     CookieService,
     LocalStorageService,
-    GeneralParametersService
+    GeneralParametersService,
+    LoginServiceService
 
   ]
 })

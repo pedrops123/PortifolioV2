@@ -38,7 +38,10 @@ export class AppComponent implements AfterViewInit {
     this.location.onUrlChange(
       (route:any) =>{
         console.log(route.replace('/',''));
-        if (route.replace('/','').trim() == 'contact' || route.replace('/','').trim() == '404'){
+        if (
+          route.replace('/','').trim() == 'contact' || 
+          route.replace('/','').trim() == '404' || 
+          route.replace('/','').trim() == 'login'){
 
           this.render.removeStyle(this.MainAnimation.nativeElement,'display');
           this.render.setStyle(this.MainAnimation.nativeElement,"display","flex");

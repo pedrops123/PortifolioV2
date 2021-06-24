@@ -1,14 +1,13 @@
 <div id="topo" class="header">
-  <div class="area_btns">
+  <div *ngIf="!hasRoute('login')" class="area_btns">
        <a *ngFor="let button of dadosMenu" [routerLinkActive]="'active'" [routerLink]="button.href" class="link_menu"><i class=""></i> {{ button.description }}</a>
   </div>
-  <div  [ngClass]="!hasRoute('inicio') ? 'area_logo' : 'area_logo hide' ">
+  <div *ngIf="!hasRoute('login')"  [ngClass]="!hasRoute('inicio') ? 'area_logo' : 'area_logo hide' ">
      {{ generalParameters.getNameDev() | titlecase }} &nbsp;&nbsp;
       <div class="foto_perfil"> 
         <img src="../../../assets/foto_perfil/foto_perfil.jpg"/>
       </div>
   </div>
-  
 </div>
 <div *ngIf="!hasRoute('inicio')" class="bread_crumb">
   <p *ngIf="hasRoute('work')"><a  routerLink="/inicio">&nbsp;&nbsp; Inicio / </a>Meus Trabalhos</p>
@@ -18,6 +17,7 @@
     <a  routerLink="/work">&nbsp; Meus Trabalhos  / </a>  
     &nbsp;&nbsp; Detalhamento Trabalho {{ idProjetoDisplay }}  
   </p>
+  <p *ngIf="hasRoute('login')"><a  routerLink="/inicio">&nbsp;&nbsp; Inicio / </a> Login</p>
 </div>
 
 

@@ -1,0 +1,57 @@
+form {
+    padding: 8px;
+    background-color: #c2c0c0;
+    width: 369px;
+    height: 369px;
+    display: grid;
+    grid-template-columns:  1fr;
+    grid-template-rows:  17vh  1fr 1fr 1fr;
+    border-radius: 0px 36px 0px 36px;
+}
+
+
+#title-area {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 18pt;
+    font-family: fantasy;
+    user-select: none;
+}
+
+.bottom-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#title-area > div{
+    width: 84%;
+    height: 47%;
+    background-color: black;
+    color: white;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+@media screen and (max-width: 375px){
+    form {
+        width: 353px;
+        height: 353px;
+    }
+}
+
+
+
+@media screen and (max-width: 320px){
+    form {
+        width: 308px;
+        height: 308px;
+    }
+}

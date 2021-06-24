@@ -1,0 +1,25 @@
+<loading-gif *ngIf="_loading"></loading-gif>
+
+<form *ngIf="!_loading" [formGroup]="_FormLogin" (ngSubmit)="validateForm()">
+    <div id="title-area">
+        <div>
+           <span class="fa fa-user"></span> &nbsp;&nbsp; Login Manager Portifólio    
+        </div>
+    </div>
+    <div class="form-group">
+        <input [class.is-invalid]="_FormLogin.get('login').hasError('required') && (_FormLogin.get('login').dirty || _FormLogin.get('login').touched)" class="form-control"  formControlName="login" type="text" placeholder="Login"/>  
+        <div  class="invalid-feedback">
+            Login não pode ser vazio !
+        </div>  
+    </div>
+    <div class="form-group"> 
+        <input [class.is-invalid]="_FormLogin.get('senha').hasError('required') && (_FormLogin.get('senha').dirty || _FormLogin.get('senha').touched)" class="form-control"  formControlName="senha" type="password" placeholder="Senha"/>
+        <div  class="invalid-feedback">
+            Senha não pode ser vazia !
+        </div>     
+    </div>
+    <div class="bottom-form">
+        <button  type="submit" class="btn btn-success"><span class="fa fa-key"> &nbsp;&nbsp; </span>Entrar</button>
+    </div>
+</form>
+

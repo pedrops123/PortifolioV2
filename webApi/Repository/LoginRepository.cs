@@ -167,23 +167,37 @@ namespace webApi.Repository{
 
         }
 
-        public ValidationLogin ValidationLogin(LoginFormModel dadosUser , IConfiguration configurationGlobal){
-           ValidationLogin retornoLogin = new ValidationLogin();
-           ValidationResult result =  new LoginValidator().Validate(dadosUser);  
-           if(result.IsValid){
-              retornoLogin =  validaLogin(dadosUser);
-              if(retornoLogin.validado){
-                 // dadosUser.UsuarioAcesso = retornoLogin.roles;
-                  TokenService tokenServiceClass = new TokenService(configurationGlobal);
-                  retornoLogin.token =  tokenServiceClass.GenerateToken(dadosUser , retornoLogin.roles.DescricaoAcesso);
-              }
-           }
-           else 
-           {  
-               result.Errors.ToList().ForEach(
-                   f => retornoLogin.messageErrors.Add(f.ErrorMessage) 
-               );
-           }
+        public RetornoGlobal<ValidationLogin> ValidationLogin(LoginFormModel dadosUser , IConfiguration configurationGlobal){
+            RetornoGlobal<ValidationLogin> retornoLogin = new RetornoGlobal<ValidationLogin>();
+            try
+            {
+                ValidationResult result =  new LoginValidator().Validate(dadosUser);  
+                if(result.IsValid){
+                    retornoLogin.RetornoObjeto =  validaLogin(dadosUser);
+                    if(retornoLogin.RetornoObjeto.validado){
+                        // dadosUser.UsuarioAcesso = retornoLogin.roles;
+                        TokenService tokenServiceClass = new TokenService(configurationGlobal);
+                        retornoLogin.RetornoObjeto.token =  tokenServiceClass.GenerateToken(dadosUser , retornoLogin.RetornoObjeto.roles.DescricaoAcesso);
+                        retornoLogin.status = true;
+                        retornoLogin.RetornoObjeto.validado = true;
+                    }
+                }
+                else 
+                {  
+                    retornoLogin.status = true;
+                    retornoLogin.RetornoObjeto.validado = false;
+                    result.Errors.ToList().ForEach(
+                        f => retornoLogin.RetornoObjeto.messageErrors.Add(f.ErrorMessage) 
+                    );
+                }
+            }
+            catch(Exception e){
+               retornoLogin.status = false;
+               retornoLogin.errors.Append(e.Message);
+               retornoLogin.errors.Append(e.InnerException.ToString());
+            }
+           
+          
             return retornoLogin;
         }
     }

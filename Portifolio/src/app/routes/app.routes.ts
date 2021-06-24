@@ -3,7 +3,8 @@ import { RouterModule, Routes } from "@angular/router";
 import { ContactComponent } from '../pages/contact/contact.component';
 import { DetailWorkComponent } from '../pages/detail-work/detail-work.component';
 import { InitialComponent } from '../pages/initial/initial.component';
-import { LoginComponent } from '../pages/login/login.component';
+import { LoginComponent } from '../pages/Manager/login/login.component';
+
 import { NotFoundComponent } from '../pages/not-found/not-found.component';
 import { WorksComponent } from '../pages/works/works.component';
 
