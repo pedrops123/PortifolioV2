@@ -1,4 +1,5 @@
 export class ModelInitialStacks {
+    nameStack:string;
     fotoStack:string;
     class:string;
     id:string;

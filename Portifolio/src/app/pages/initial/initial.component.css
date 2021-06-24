@@ -26,7 +26,7 @@
     font-size: 16pt;
     z-index: 0;
     position: relative;
-    border: 9px solid gray;
+    border: 1px solid gray;
     padding: 46px;
     width: 70%;
     height: auto;
@@ -202,6 +202,11 @@
 }
 
 @media screen and (max-width:400px)and (orientation:portrait){
+
+    .painel-boas-vindas {
+        font-size: 8pt;
+    }
+
     .img-foto{
         width: 108px;
         height: 108px;
@@ -236,6 +241,12 @@
 }
 
 @media screen and (max-width:325px)and (orientation:portrait){
+
+    .painel-boas-vindas {
+        font-size: 8pt;
+    }
+
+
     .img-foto{
         width: 80px;
         height: 80px;

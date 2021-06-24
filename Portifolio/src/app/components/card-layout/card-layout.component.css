@@ -23,13 +23,19 @@
     width: 90px;
     height: auto;
     align-self: center;
-    font-size: 10pt;
+    font-size: 7pt;
 }
 
 .descritivo-card{
     text-align: center;
 }
 
-.img_card > img{
-    max-width: 100%;
+.img_card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_card > img {
+    max-width: 67%;
 }

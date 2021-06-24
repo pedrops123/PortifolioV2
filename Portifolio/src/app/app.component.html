@@ -1,8 +1,10 @@
 <div class="app">
   <menu-principal></menu-principal>
   <div class="corpo">
-    <router-outlet></router-outlet>
-    <button (click)="scrollToTop()" *ngIf="this.buttonVisible" class="btn btn-success btn-up"> 
+    <main #componentMainAnimation [@routeAnimations]="prepareRoute(outlet)">
+      <router-outlet #outlet="outlet"></router-outlet>
+    </main>
+    <button (click)="scrollToTop()" *ngIf="this.buttonVisible" class="btn-up"> 
       <i class="fas fa-arrow-up"></i>
     </button>
   </div>

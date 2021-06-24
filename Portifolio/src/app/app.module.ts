@@ -24,6 +24,7 @@ import { ComponentsModule } from './components/components.module';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ServicesModule } from './services/services.module';
+import { fader } from './routes/route-animations';
 @NgModule({
   declarations: [
     AppComponent,

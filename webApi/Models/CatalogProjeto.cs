@@ -22,5 +22,5 @@ namespace webApi.Models {
 
         
         public virtual List<FotosProjeto> ListaFotos { get; set; } 
-    }
+    }       
 }

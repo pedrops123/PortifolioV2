@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GeneralParametersService } from 'src/app/services/GeneralParameters/general-parameters.service';
 
 @Component({
   selector: 'footerApp',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(public parametrosGeraisService:GeneralParametersService) { }
 
   ngOnInit(): void {
+  }
+
+
+  getActualDate(){
+    return new Date().getFullYear().toString();    
   }
 
 }

@@ -1,11 +1,11 @@
 <div class="card-custom-work-presentation">
   <div class="img_card">
-     <img src="../../../assets/Imagem teste.jpg"/>
+     <img [src]="urlFoto"/>
   </div>
     <div class="descritivo-card">
-      Descritivo capa Descritivo capa Descritivo capa Descritivo capa Descritivo capa Descritivo capa Descritivo capa Descritivo capa
+      {{ description }}
   </div>
   <div class="bottom-card">
-     <button [innerHTML]="'telaTrabalhos.description-bottom-btn' | translate" class="btn btn-success"></button>
+     <button [routerLink]="'/detail/' + this.idProjeto"  [innerHTML]="'telaTrabalhos.description-bottom-btn' | translate" class="btn btn-success"></button>
   </div>
 </div>

@@ -11,7 +11,6 @@ export class CardLayoutComponent implements OnInit {
   @Input() idProjeto :number;
   @Input() urlFoto:string;
   @Input() description :string;
-  @Input() href:string;
   
   constructor(private router:Router) { }
 

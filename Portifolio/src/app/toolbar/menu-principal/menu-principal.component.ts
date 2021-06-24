@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterLinkActive, RouterOutlet, ActivatedRoute } from '@angular/router';
 import { ButtonsMenu } from 'src/app/models/ButtonsMenu';
 import { RetornoGlobal } from 'src/app/models/RetornoGlobal';
+import { GeneralParametersService } from 'src/app/services/GeneralParameters/general-parameters.service';
 import { MenuServiceService } from 'src/app/services/menu/menu-service.service';
 
 
@@ -13,9 +14,14 @@ import { MenuServiceService } from 'src/app/services/menu/menu-service.service';
 export class MenuPrincipalComponent implements OnInit {
 
   dadosMenu:ButtonsMenu[];
- 
+  
+  idProjetoDisplay:Number;
 
-  constructor(private router:Router , private routerActive:ActivatedRoute,  private serviceMenu:MenuServiceService) {
+  constructor(
+    private router:Router , 
+    private routerActive:ActivatedRoute,  
+    private serviceMenu:MenuServiceService,
+    public generalParameters:GeneralParametersService ) {
    
     serviceMenu.getMenuInicial().subscribe(
         Response =>{  this.dadosMenu = Response.retornoObjeto; }  , 
@@ -30,13 +36,9 @@ export class MenuPrincipalComponent implements OnInit {
     return this.router.url.includes(route);
   }
 
-  
-  getIdDescription(){
-    let id = this.routerActive.snapshot.paramMap.get('idWork');
-    //console.log(id);
-    return id;
+  setIdProject(idProjeto:Number){
+    this.idProjetoDisplay = idProjeto;
   }
-  
 
 
 }

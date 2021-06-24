@@ -14,14 +14,17 @@ const APP_ROTAS : Routes = [
         children:[
             {
                 path:'inicio',
-                component:InitialComponent
+                component:InitialComponent,
+                data: { animation:'isLeft' }
             },
             {
                 path:'work',
-                component:WorksComponent
+                component:WorksComponent,
+                data: { animation:'isRight' }
             },
             {
                 path:'contact',
+                data: { animation:'isLeft' },
                 component:ContactComponent
             },
             {
