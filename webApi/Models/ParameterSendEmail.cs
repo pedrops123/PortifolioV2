@@ -4,7 +4,7 @@ namespace webApi.Models{
     /// <summary>
     /// Parametro  envio de mesnsagem
     /// </summary>
-    public class ParameterSendEmail{
+    public class ParameterSendEmail {
 
         /// <summary>
         /// Propriedade email usuario contato
