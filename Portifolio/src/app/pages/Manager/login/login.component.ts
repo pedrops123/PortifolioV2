@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AppComponent } from 'src/app/app.component';
 import { LoginServiceService } from 'src/app/services/Login/login-service.service';
+import { TokenService } from 'src/app/services/token/token.service';
 
 @Component({
   selector: 'app-login',
@@ -13,11 +16,17 @@ export class LoginComponent implements OnInit {
    _loading:boolean;
   constructor(
        private builder:FormBuilder , 
-      private loginService:LoginServiceService) {
+       private loginService:LoginServiceService,
+       private ServiceToken:TokenService,
+       private Router:Router,
+       principal:AppComponent) {
+
       this._FormLogin =  builder.group({
         login:['' , [ Validators.required , Validators.minLength(1) ]],
         senha:['',  [ Validators.required , Validators.minLength(1) ]]
       });
+
+      principal.setTitle('Login Manager');
    }
 
   ngOnInit(): void {
@@ -36,14 +45,20 @@ export class LoginComponent implements OnInit {
         .subscribe(r => {
           if(r.status == true){
               if (r.retornoObjeto.validado){
-
+                  this.ServiceToken.setToken({
+                    token:r.retornoObjeto.token,
+                    roles:r.retornoObjeto.roles.descricaoAcesso,
+                    hours:2000
+                  });
+                  this.Router.navigate(['/manager']); 
               }
-              else{
+              else {
                 var errors = "";
-                r.retornoObjeto.messageerrors.map(r=>{
-                  errors != r + '<br/>';
+                r.retornoObjeto.messageErrors.map(r=>{
+                  errors += r + '<br/>';
                 });
                 alert(errors);
+                this._FormLogin.reset();
               }
               this._loading = false;
           }

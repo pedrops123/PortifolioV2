@@ -2,7 +2,7 @@ import { UsuarioAcesso } from "./UsuarioAcesso";
 
 export class ValidationLogin {
      validado:boolean;
-     messageerrors:string[];
+     messageErrors:string[];
      roles:UsuarioAcesso;
      token:string;
 }

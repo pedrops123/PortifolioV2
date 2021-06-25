@@ -3,14 +3,16 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class CookieService {
  
-  // Seta cookie no navegador cliente
-  setCookie(name:string , value:any , days:number) 
+  // Seta cookie no navegador cliente por hora
+  setCookie(name:string , value:any , hours:number) 
   {
     var expires = "";
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days*24*60*60*1000));
-        expires = "; expires=" + date.toUTCString();
+    if (hours) {
+      var now = new Date();
+      var time = now.getTime();
+      time += 3600 * hours;
+      now.setTime(time);
+        expires = "; expires='" + now.toUTCString();
     }
     document.cookie = name + "=" + (value || "")  + expires + "; path=/";
 }
@@ -27,6 +29,10 @@ export class CookieService {
       return null;
   }
 
+
+  deleteCookie(name:string){
+    document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+  }
 
 
 

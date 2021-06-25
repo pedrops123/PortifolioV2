@@ -1,12 +1,16 @@
 <div id="topo" class="header">
-  <div *ngIf="!hasRoute('login')" class="area_btns">
+  <div *ngIf="!hasRoute('login') && !hasRoute('manager')" class="area_btns">
        <a *ngFor="let button of dadosMenu" [routerLinkActive]="'active'" [routerLink]="button.href" class="link_menu"><i class=""></i> {{ button.description }}</a>
   </div>
-  <div *ngIf="!hasRoute('login')"  [ngClass]="!hasRoute('inicio') ? 'area_logo' : 'area_logo hide' ">
+  <div *ngIf="!hasRoute('login') && !hasRoute('manager')"  [ngClass]="!hasRoute('inicio') ? 'area_logo' : 'area_logo hide' ">
      {{ generalParameters.getNameDev() | titlecase }} &nbsp;&nbsp;
       <div class="foto_perfil"> 
         <img src="../../../assets/foto_perfil/foto_perfil.jpg"/>
       </div>
+  </div>
+  <div *ngIf="hasRoute('manager') && this.tokenService.isAuthenticated"></div>
+  <div class="logout-btn"  *ngIf="hasRoute('manager') && this.tokenService.isAuthenticated">
+      <p (click)="deslogar()"><span class="fa fa-sign-out"></span> &nbsp; Sair</p>
   </div>
 </div>
 <div *ngIf="!hasRoute('inicio')" class="bread_crumb">

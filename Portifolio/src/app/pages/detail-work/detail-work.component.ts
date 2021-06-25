@@ -37,6 +37,7 @@ export class DetailWorkComponent implements OnInit {
          });
       */
       //console.log(this.idProjeto);
+      principal.setTitle('Descrição Projeto');
       principal.scrollToTop();
    }
 

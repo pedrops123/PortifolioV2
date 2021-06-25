@@ -12,18 +12,14 @@ import { WorksComponent } from './pages/works/works.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { rotaApp } from './routes/app.routes';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { MenuServiceService } from './services/menu/menu-service.service';
 import { DirectivesModuleModule } from './directives/directives-module.module';
 import { FooterComponent } from './footer/footer/footer.component';
-import { WorkServiceService } from './services/works/work-service.service';
 import { DetailWorkComponent } from './pages/detail-work/detail-work.component';
-import { DetailWorkService } from './services/detail-work/detail-work.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ComponentsModule } from './components/components.module';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ServicesModule } from './services/services.module';
-import { fader } from './routes/route-animations';
 import { ManagerModule } from './pages/Manager/manager.module';
 @NgModule({
   declarations: [
@@ -35,7 +31,6 @@ import { ManagerModule } from './pages/Manager/manager.module';
     NotFoundComponent,
     FooterComponent,
     DetailWorkComponent,
-    
   
   ],
   imports: [

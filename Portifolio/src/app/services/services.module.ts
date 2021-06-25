@@ -7,6 +7,7 @@ import { CookieService } from './Cookie/cookie.service';
 import { LocalStorageService } from './LocalStorage/local-storage.service';
 import { GeneralParametersService } from './GeneralParameters/general-parameters.service';
 import { LoginServiceService } from './Login/login-service.service';
+import { TokenService } from './token/token.service';
 
 
 
@@ -22,7 +23,8 @@ import { LoginServiceService } from './Login/login-service.service';
     CookieService,
     LocalStorageService,
     GeneralParametersService,
-    LoginServiceService
+    LoginServiceService,
+    TokenService
 
   ]
 })

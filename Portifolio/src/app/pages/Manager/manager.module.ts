@@ -3,12 +3,17 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComponentsModule } from 'src/app/components/components.module';
+import { ManagerPrincipalComponent } from './manager-principal/manager-principal.component';
 
 
 
 @NgModule({
-  declarations: [LoginComponent],
-  exports:[LoginComponent],
+  declarations: [
+    LoginComponent,
+    ManagerPrincipalComponent],
+  exports:[
+    LoginComponent,
+    ManagerPrincipalComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

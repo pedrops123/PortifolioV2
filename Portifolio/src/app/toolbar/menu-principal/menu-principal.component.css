@@ -94,6 +94,18 @@
 
 }
 
+.logout-btn {
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout-btn > p {
+    margin-bottom:0 !important;
+    cursor: pointer;
+}
+
 
 @media screen and (max-width:770px){
 

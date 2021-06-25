@@ -4,6 +4,7 @@ import { ButtonsMenu } from 'src/app/models/ButtonsMenu';
 import { RetornoGlobal } from 'src/app/models/RetornoGlobal';
 import { GeneralParametersService } from 'src/app/services/GeneralParameters/general-parameters.service';
 import { MenuServiceService } from 'src/app/services/menu/menu-service.service';
+import { TokenService } from 'src/app/services/token/token.service';
 
 
 @Component({
@@ -21,6 +22,7 @@ export class MenuPrincipalComponent implements OnInit {
     private router:Router , 
     private routerActive:ActivatedRoute,  
     private serviceMenu:MenuServiceService,
+    public tokenService:TokenService,
     public generalParameters:GeneralParametersService ) {
    
     serviceMenu.getMenuInicial().subscribe(
@@ -38,6 +40,11 @@ export class MenuPrincipalComponent implements OnInit {
 
   setIdProject(idProjeto:Number){
     this.idProjetoDisplay = idProjeto;
+  }
+
+  deslogar(){
+    this.tokenService.deslogarUser();
+    this.router.navigate(['login']);
   }
 
 

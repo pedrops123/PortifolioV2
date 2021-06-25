@@ -181,6 +181,10 @@ namespace webApi.Repository{
                         retornoLogin.status = true;
                         retornoLogin.RetornoObjeto.validado = true;
                     }
+                    else{
+                        retornoLogin.status = true;
+                        retornoLogin.RetornoObjeto.validado = false;
+                    }
                 }
                 else 
                 {  
