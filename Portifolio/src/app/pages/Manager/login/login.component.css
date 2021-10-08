@@ -1,8 +1,17 @@
+div#container-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+
 form {
     padding: 8px;
     background-color: #c2c0c0;
-    width: 369px;
-    height: 369px;
+    width: 40%;
+    height: 73%;
     display: grid;
     grid-template-columns:  1fr;
     grid-template-rows:  17vh  1fr 1fr 1fr;
@@ -15,7 +24,6 @@ form {
     justify-content: center;
     text-align: center;
     align-items: center;
-    font-size: 18pt;
     font-family: fantasy;
     user-select: none;
 }
@@ -28,7 +36,7 @@ form {
 
 #title-area > div{
     width: 84%;
-    height: 47%;
+    height: 66px;
     background-color: black;
     color: white;
     border-radius: 60px;
@@ -40,18 +48,21 @@ form {
 
 
 
-@media screen and (max-width: 375px){
+@media screen and (max-width:426px){
     form {
-        width: 353px;
-        height: 353px;
+       
+        width: 70%;
+        height: 349px;
+       
     }
 }
 
 
-
-@media screen and (max-width: 320px){
+@media screen and (max-width:376px){
     form {
-        width: 308px;
-        height: 308px;
+       
+        width: 80%;
+        height: 337px;
+       
     }
 }

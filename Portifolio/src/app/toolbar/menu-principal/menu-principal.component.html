@@ -1,4 +1,5 @@
 <div id="topo" class="header">
+
   <div *ngIf="!hasRoute('login') && !hasRoute('manager')" class="area_btns">
        <a *ngFor="let button of dadosMenu" [routerLinkActive]="'active'" [routerLink]="button.href" class="link_menu"><i class=""></i> {{ button.description }}</a>
   </div>
@@ -8,10 +9,14 @@
         <img src="../../../assets/foto_perfil/foto_perfil.jpg"/>
       </div>
   </div>
-  <div *ngIf="hasRoute('manager') && this.tokenService.isAuthenticated"></div>
+
+  <div *ngIf="hasRoute('manager') && this.tokenService.isAuthenticated">
+    <span (click)="OpenCloseMenu()" id="span-menu-manager" class="fa fa-bars fa-2x"></span>
+  </div>
   <div class="logout-btn"  *ngIf="hasRoute('manager') && this.tokenService.isAuthenticated">
       <p (click)="deslogar()"><span class="fa fa-sign-out"></span> &nbsp; Sair</p>
   </div>
+
 </div>
 <div *ngIf="!hasRoute('inicio')" class="bread_crumb">
   <p *ngIf="hasRoute('work')"><a  routerLink="/inicio">&nbsp;&nbsp; Inicio / </a>Meus Trabalhos</p>

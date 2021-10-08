@@ -7,10 +7,36 @@ body {
 
 }
 
- */
 main{
    position: relative;
 }
+
+ */
+
+/*
+ ################# CLASSES DEFAULT ###################
+
+*/
+
+.container-fundo-default {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    width: 100%;
+    height: 100%;
+    
+}
+
+
+
+
+
+/*
+ ################# CLASSES ESPECIFICAS ###################
+
+*/
+
+
 
  html,body {
     margin:0;
@@ -20,7 +46,7 @@ main{
   div.app {
       display: grid;
       height: 100%;
-      grid-template-rows: 8vh 4vh 100fr 5vh;
+      grid-template-rows: 8vh 4vh 100fr 1fr;
       grid-template-areas:"header"
                           "bread" 
                           "corpo" 
@@ -57,7 +83,7 @@ main{
           font-size:7pt;
       }
   
-      .link_menu{
+      .link_menu {
           font-size: 6pt;
       }
   

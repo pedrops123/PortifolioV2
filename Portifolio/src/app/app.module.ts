@@ -21,6 +21,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ServicesModule } from './services/services.module';
 import { ManagerModule } from './pages/Manager/manager.module';
+import { ManagerPrincipalComponent } from './pages/Manager/manager-principal/manager-principal.component';
 @NgModule({
   declarations: [
     AppComponent,

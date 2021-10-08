@@ -35,44 +35,8 @@ export class AppComponent implements AfterViewInit {
 
 
   ngAfterViewInit(): void {
-    this.location.onUrlChange(
-      (route:any) =>{
-        console.log(route.replace('/',''));
-        if (
-          route.replace('/','').trim() == 'contact' || 
-          route.replace('/','').trim() == '404' || 
-          route.replace('/','').trim() == 'login'){
 
-          this.render.removeStyle(this.MainAnimation.nativeElement,'display');
-          this.render.setStyle(this.MainAnimation.nativeElement,"display","flex");
-          this.render.setStyle(this.MainAnimation.nativeElement,"justify-content","center");
-          this.render.setStyle(this.MainAnimation.nativeElement,"align-items","center");
-          this.render.setStyle(this.MainAnimation.nativeElement,"height","100%");
-          //console.log(document.getElementsByTagName("main")[0].style);
-          /* 
-          document.getElementsByTagName("main")[0].style.display = "flex";
-          document.getElementsByTagName("main")[0].style.justifyContent = "center"; 
-          document.getElementsByTagName("main")[0].style.alignContent = "center";
-          document.getElementsByTagName("main")[0].style.placeContent = "none !important";
-          document.getElementsByTagName("main")[0].style.height = "100%";
-          */
-        }
-        else 
-        {
-          this.render.setStyle(this.MainAnimation.nativeElement,"display","block");
-          this.render.removeStyle(this.MainAnimation.nativeElement,"justify-content");
-          this.render.removeStyle(this.MainAnimation.nativeElement,"align-items");
-          this.render.removeStyle(this.MainAnimation.nativeElement,"height");
-
-          /* 
-          document.getElementsByTagName("main")[0].style.display = "block";
-          document.getElementsByTagName("main")[0].style.removeProperty("justifyContent");
-          document.getElementsByTagName("main")[0].style.removeProperty("alignContent"); 
-          document.getElementsByTagName("main")[0].style.removeProperty("height"); 
-          */
-        }
-      }
-    );
+    
   }
 
   scrollToTop(){
@@ -84,9 +48,11 @@ export class AppComponent implements AfterViewInit {
     this.titleService.setTitle(`Portfólio - ${ description }`);
   }
 
+  /* 
   prepareRoute(outlet:RouterOutlet){
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
+  */
 }
 
 

@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router, RouterLinkActive, RouterOutlet, ActivatedRoute } from '@angular/router';
 import { ButtonsMenu } from 'src/app/models/ButtonsMenu';
 import { RetornoGlobal } from 'src/app/models/RetornoGlobal';
+import { ManagerPrincipalComponent } from 'src/app/pages/Manager/manager-principal/manager-principal.component';
 import { GeneralParametersService } from 'src/app/services/GeneralParameters/general-parameters.service';
+import { ManagerPrincipalService } from 'src/app/services/ManagerPrincipal/manager-principal.service';
 import { MenuServiceService } from 'src/app/services/menu/menu-service.service';
 import { TokenService } from 'src/app/services/token/token.service';
 
@@ -13,15 +15,16 @@ import { TokenService } from 'src/app/services/token/token.service';
   styleUrls: ['./menu-principal.component.css']
 })
 export class MenuPrincipalComponent implements OnInit {
-
   dadosMenu:ButtonsMenu[];
-  
   idProjetoDisplay:Number;
+
 
   constructor(
     private router:Router , 
     private routerActive:ActivatedRoute,  
     private serviceMenu:MenuServiceService,
+    private managerPrincipal:ManagerPrincipalComponent,
+    private managerService:ManagerPrincipalService,
     public tokenService:TokenService,
     public generalParameters:GeneralParametersService ) {
    
@@ -44,7 +47,11 @@ export class MenuPrincipalComponent implements OnInit {
 
   deslogar(){
     this.tokenService.deslogarUser();
-    this.router.navigate(['login']);
+    this.router.navigate(['/login']);
+  }
+
+  OpenCloseMenu(){
+    this.managerService.OpenMenu = !this.managerService.OpenMenu;
   }
 
 

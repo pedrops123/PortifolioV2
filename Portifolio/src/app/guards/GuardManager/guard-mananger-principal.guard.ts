@@ -15,7 +15,8 @@ export class GuardManangerPrincipalGuard implements CanActivate {
        
         this.ServiceToken.isAuthenticated = true;
     }
-    else{
+    else
+    {
       this.router.navigate(['/login']);
       this.ServiceToken.isAuthenticated = false;
     }

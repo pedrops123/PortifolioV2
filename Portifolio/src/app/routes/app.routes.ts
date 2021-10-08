@@ -18,17 +18,17 @@ const APP_ROTAS : Routes = [
         children:[
             {
                 path:'inicio',
-                component:InitialComponent,
-                data: { animation:'isLeft' }
+                component:InitialComponent //,
+                //data: { animation:'isLeft' }
             },
             {
                 path:'work',
-                component:WorksComponent,
-                data: { animation:'isRight' }
+                component:WorksComponent //,
+                //data: { animation:'isRight' }
             },
             {
                 path:'contact',
-                data: { animation:'isLeft' },
+                //data: { animation:'isLeft' },
                 component:ContactComponent
             },
             {

@@ -10,14 +10,19 @@ import { ManagerPrincipalComponent } from './manager-principal/manager-principal
 @NgModule({
   declarations: [
     LoginComponent,
-    ManagerPrincipalComponent],
+    ManagerPrincipalComponent
+  ],
   exports:[
     LoginComponent,
-    ManagerPrincipalComponent],
+    ManagerPrincipalComponent
+  ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     ComponentsModule
+  ]
+  ,providers:[
+    ManagerPrincipalComponent
   ]
 })
 export class ManagerModule { }

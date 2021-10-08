@@ -8,6 +8,7 @@ import { LocalStorageService } from './LocalStorage/local-storage.service';
 import { GeneralParametersService } from './GeneralParameters/general-parameters.service';
 import { LoginServiceService } from './Login/login-service.service';
 import { TokenService } from './token/token.service';
+import { ManagerPrincipalService } from './ManagerPrincipal/manager-principal.service';
 
 
 
@@ -24,8 +25,8 @@ import { TokenService } from './token/token.service';
     LocalStorageService,
     GeneralParametersService,
     LoginServiceService,
-    TokenService
-
+    TokenService,
+    ManagerPrincipalService
   ]
 })
 export class ServicesModule { }
