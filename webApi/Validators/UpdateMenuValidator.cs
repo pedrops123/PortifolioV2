@@ -13,7 +13,7 @@ namespace webApi.Validators{
             RuleFor(r => r.Id).NotEmpty().WithMessage("Id não pode ser vazio.");
             
 
-              // Descricao Botão 
+            // Descricao Botão 
             RuleFor(r => r.description).NotNull().WithMessage("Descrição botão não pode ser nulo.");
             RuleFor(r => r.description).NotEmpty().WithMessage("Descrição botão não pode ser vazio.");
             

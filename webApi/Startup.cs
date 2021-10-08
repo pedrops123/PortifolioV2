@@ -18,7 +18,7 @@ namespace webApi
     public class Startup
     {
          private const string name_cors = "AllowCorsLocal"; 
-          private static string hashServer = "";
+         private static string hashServer = "";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;

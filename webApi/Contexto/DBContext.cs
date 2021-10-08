@@ -19,6 +19,7 @@ namespace Contexto {
     public ContextoDB(IConfiguration configuration){
         this._connectionStrings = configuration.GetConnectionString("ConexionDB");
         this.Database.EnsureCreated();
+        
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
